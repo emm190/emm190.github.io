@@ -166,7 +166,7 @@
                               <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="customCheckSSU5">
                                 <label class="custom-control-label" for="customCheckSSU5">Considers stabilization of spine</label>
-                                <button type="button" class="btn btn-primary">(or do)</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSSUSpine">(or do)</button>
                               </div>
                             </div>
                           </li>
@@ -438,6 +438,55 @@
           </div>
         </li>
         <!-- End entry -->
+        <!-- Begin modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End modal -->
+        <!-- Begin modal -->
+        <div class="modal fade" id="modalSSUSpine" tabindex="-1" role="dialog" aria-labelledby="modalSSUSpineLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalSSUSpineLabel">Considers stabilization of spine</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="modalSSUSpineCheck1">
+                  <label class="custom-control-label" for="modalSSUSpineCheck1">(Assistant) steadies head</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="modalSSUSpineCheck2">
+                  <label class="custom-control-label" for="modalSSUSpineCheck2">(Assistant) applies cervical collar</label>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End modal -->
       </div>
     </div>
     <!-- Optional JavaScript -->
