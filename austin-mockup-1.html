@@ -223,7 +223,7 @@
                                     <li class="list-group-item">
                                       <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheckIARAirway1">
-                                        <label class="custom-control-label" for="customCheckIARAirway1">Opens &assesses airway</label>
+                                        <label class="custom-control-label" for="customCheckIARAirway1">Opens & assesses airway</label>
                                       </div>
                                     </li>
                                     <li class="list-group-item">
@@ -248,7 +248,7 @@
                                     <label class="custom-control-label" for="customCheckIARBreathing">
                                       <h4 class="panel-title">
                                       <a class="collapsed" data-toggle="collapse" href="#collapseListGroupIARBreathing" aria-expanded="false" aria-controls="collapseListGroupIARBreathing">
-                                        Collapsible list IARBreathing
+                                        Breathing
                                       </a>
                                       </h4>
                                     </label>
@@ -259,19 +259,25 @@
                                     <li class="list-group-item">
                                       <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheckIARBreathing1">
-                                        <label class="custom-control-label" for="customCheckIARBreathing1">Checkbox1</label>
+                                        <label class="custom-control-label" for="customCheckIARBreathing1">Assess breathing</label>
                                       </div>
                                     </li>
                                     <li class="list-group-item">
                                       <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheckIARBreathing2">
-                                        <label class="custom-control-label" for="customCheckIARBreathing2">Checkbox2</label>
+                                        <label class="custom-control-label" for="customCheckIARBreathing2">Assess adequate ventilation</label>
                                       </div>
                                     </li>
                                     <li class="list-group-item">
                                       <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheckIARBreathing3">
-                                        <label class="custom-control-label" for="customCheckIARBreathing3">Checkbox3</label>
+                                        <label class="custom-control-label" for="customCheckIARBreathing3">Initiates appropriate oxygen therapy</label>
+                                      </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheckIARBreathing4">
+                                        <label class="custom-control-label" for="customCheckIARBreathing4">Manages & injure which may compromise breathing/ventilation</label>
                                       </div>
                                     </li>
                                   </ul>
@@ -280,6 +286,60 @@
                             </div>
                           </li>
                           <!-- End entry -->
+                          <!-- Begin entry -->
+                          <li class="list-group-item">
+                            <div class="panel-group" role="tablist">
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="collapseListGroupHeadingIARCirculation">
+                                  <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheckIARCirculation">
+                                    <label class="custom-control-label" for="customCheckIARCirculation">
+                                      <h4 class="panel-title">
+                                      <a class="collapsed" data-toggle="collapse" href="#collapseListGroupIARCirculation" aria-expanded="false" aria-controls="collapseListGroupIARCirculation">
+                                        Circulation
+                                      </a>
+                                      </h4>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div id="collapseListGroupIARCirculation" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="collapseListGroupHeadingIARCirculation">
+                                  <ul class="list-group">
+                                    <li class="list-group-item">
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheckIARCirculation1">
+                                        <label class="custom-control-label" for="customCheckIARCirculation1">Checks pulse</label>
+                                      </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheckIARCirculation2">
+                                        <label class="custom-control-label" for="customCheckIARCirculation2">Assess skin [color, temperature, or condition]</label>
+                                      </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheckIARCirculation3">
+                                        <label class="custom-control-label" for="customCheckIARCirculation3">Assesses for &controls major bleeding if present</label>
+                                      </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                      <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheckIARCirculation4">
+                                        <label class="custom-control-label" for="customCheckIARCirculation4">Initiates shock management</label>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <!-- End entry -->
+                          <li class="list-group-item">
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="customCheckIAR4">
+                              <label class="custom-control-label" for="customCheckIAR4">Identifies priority patients/makes transport decision based upon calculated GCS</label>
+                            </div>
+                          </li>
                         </ul>
                       </div>
                     </div>
@@ -290,36 +350,30 @@
                 <li class="list-group-item">
                   <div class="panel-group" role="tablist">
                     <div class="panel panel-default">
-                      <div class="panel-heading" role="tab" id="collapseListGroupHeadingSample">
+                      <div class="panel-heading" role="tab" id="collapseListGroupHeadingHT">
                         <div class="custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="customCheckSample">
-                          <label class="custom-control-label" for="customCheckSample">
+                          <input type="checkbox" class="custom-control-input" id="customCheckHT">
+                          <label class="custom-control-label" for="customCheckHT">
                             <h4 class="panel-title">
-                            <a class="collapsed" data-toggle="collapse" href="#collapseListGroupSample" aria-expanded="false" aria-controls="collapseListGroupSample">
-                              Collapsible list sample
+                            <a class="collapsed" data-toggle="collapse" href="#collapseListGroupHT" aria-expanded="false" aria-controls="collapseListGroupHT">
+                              HISTORY TAKING
                             </a>
                             </h4>
                           </label>
                         </div>
                       </div>
-                      <div id="collapseListGroupSample" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeadingSample">
+                      <div id="collapseListGroupHT" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="collapseListGroupHeadingHT">
                         <ul class="list-group">
                           <li class="list-group-item">
                             <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" id="customCheckSample1">
-                              <label class="custom-control-label" for="customCheckSample1">Checkbox1</label>
+                              <input type="checkbox" class="custom-control-input" id="customCheckHT1">
+                              <label class="custom-control-label" for="customCheckHT1">Obtains, or directs assistant to obtain, baseline vital signs</label>
                             </div>
                           </li>
                           <li class="list-group-item">
                             <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" id="customCheckSample2">
-                              <label class="custom-control-label" for="customCheckSample2">Checkbox2</label>
-                            </div>
-                          </li>
-                          <li class="list-group-item">
-                            <div class="custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" id="customCheckSample3">
-                              <label class="custom-control-label" for="customCheckSample3">Checkbox3</label>
+                              <input type="checkbox" class="custom-control-input" id="customCheckHT2">
+                              <label class="custom-control-label" for="customCheckHT2">Attempts to obtain SAMPLE history</label>
                             </div>
                           </li>
                         </ul>
