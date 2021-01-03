@@ -11,7 +11,7 @@
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
       <!-- <a class="navbar-brand" href="#">Click here to hide information (placeholder)</a> -->
-      <button data-toggle="collapse" data-target="#information-panel" type="button" class="btn btn-success">Info</button>
+      <button data-toggle="collapse" data-target="#informationPanel" type="button" class="btn btn-success">Info</button>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
@@ -40,7 +40,7 @@
       </div>
     </nav>
     <div class="row">
-      <div id="information-panel" class="col-4 show">
+      <div id="informationPanel" class="col-4 show">
         <div class="d-inline-flex p-2">
           <h2>Information</h2>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#scenarioInfoModal">Scenario Information</button>
@@ -49,63 +49,256 @@
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
         </form>
-        <table class="table table-hover">
-          <thead>
-            <tr class="table-primary">
-              <th scope="col">Type</th>
-              <th scope="col">Info</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="table-danger">
-              <!-- table-danger could be used on major problems the evaluator wants to keep an eye on -->
-              <th scope="row">X</th>
-              <td>Major external hemorrhage at lower right leg</td>
-            </tr>
-            <tr>
-              <th scope="row">A</th>
-              <td>Patent</td>
-            </tr>
-            <tr class="table-active">
-              <!-- Use the table-active class for the last row the student clicked on -->
-              <th scope="row">B</th>
-              <td>8, shallow, irregular</td>
-            </tr>
-            <tr class="table-warning">
-              <!-- table-warning could be used on minor problems the evaluator wants to keep an eye on -->
-              <th scope="row">C</th>
-              <td>130, weak radial pulses</td>
-            </tr>
-            <tr>
-              <th scope="row">D</th>
-              <td>8 (E-2, V-2, M-4), PERRLA, sluggish</td>
-            </tr>
-            <tr class="table-danger">
-              <th scope="row">E</th>
-              <td>Multiple lacerations to face, scalp, right arm, amputation at the right ankle</td>
-            </tr>
-            <tr>
-              <th scope="row">BP</th>
-              <td>96/palpation</td>
-            </tr>
-            <tr>
-              <th scope="row">P</th>
-              <td>130, weak radial pulses</td>
-            </tr>
-            <tr>
-              <th scope="row">R</th>
-              <td>38, shallow; LS clear and equal with crepitus on right</td>
-            </tr>
-            <tr>
-              <th scope="row">Skin</th>
-              <td>Cyanotic, diaphoretic</td>
-            </tr>
-            <tr>
-              <th scope="row">Spo<sub>2</sub></th>
-              <td>78%/RA</td>
-            </tr>
-          </tbody>
-        </table>
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" id="secondaryVitalSigns" data-toggle="tab" href="#secondaryVitalSignsTabPane" role="tab" aria-controls="secondaryVitalSignsTabPane" aria-selected="true">Secondary</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="criticalDoneVitalSigns" data-toggle="tab" href="#criticalDoneVitalSignsTabPane" role="tab" aria-controls="criticalDoneVitalSignsTabPane" aria-selected="false">Critical Done</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="criticalNotDoneVitalSigns" data-toggle="tab" href="#criticalNotDoneVitalSignsTabPane" role="tab" aria-controls="criticalNotDoneVitalSignsTabPane" aria-selected="false">Critical NOT Done</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="informationPanelTabContent">
+          <div class="tab-pane active" id="secondaryVitalSignsTabPane" role="tabpanel" aria-labelledby="secondaryVitalSigns">
+            <table class="table table-hover">
+              <thead>
+                <tr class="table-primary">
+                  <th scope="col">Type</th>
+                  <th scope="col">Info</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-danger">
+                  <!-- table-danger could be used on major problems the evaluator wants to keep an eye on -->
+                  <th scope="row">X</th>
+                  <td>Major external hemorrhage at lower right leg</td>
+                </tr>
+                <tr>
+                  <th scope="row">A</th>
+                  <td>Patent</td>
+                </tr>
+                <tr class="table-active">
+                  <!-- Use the table-active class for the last row the student clicked on -->
+                  <th scope="row">B</th>
+                  <td>8, shallow, irregular</td>
+                </tr>
+                <tr class="table-warning">
+                  <!-- table-warning could be used on minor problems the evaluator wants to keep an eye on -->
+                  <th scope="row">C</th>
+                  <td>130, weak radial pulses</td>
+                </tr>
+                <tr>
+                  <th scope="row">D</th>
+                  <td>8 (E-2, V-2, M-4), PERRLA, sluggish</td>
+                </tr>
+                <tr class="table-danger">
+                  <th scope="row">E</th>
+                  <td>Multiple lacerations to face, scalp, right arm, amputation at the right ankle</td>
+                </tr>
+                <tr>
+                  <th scope="row">BP</th>
+                  <td>96/palpation</td>
+                </tr>
+                <tr>
+                  <th scope="row">P</th>
+                  <td>130, weak radial pulses</td>
+                </tr>
+                <tr>
+                  <th scope="row">R</th>
+                  <td>38, shallow; LS clear and equal with crepitus on right</td>
+                </tr>
+                <tr>
+                  <th scope="row">Skin</th>
+                  <td>Cyanotic, diaphoretic</td>
+                </tr>
+                <tr>
+                  <th scope="row">Spo<sub>2</sub></th>
+                  <td>78%/RA</td>
+                </tr>
+                <tr>
+                  <th scope="row">ETCO<sub>2</sub></th>
+                  <td>64 mm Hg</td>
+                </tr>
+                <tr>
+                  <th scope="row">GCS</th>
+                  <td>8 (E-2, V-2, M-4), PERRLA</td>
+                </tr>
+                <tr>
+                  <th scope="row">Glucose</th>
+                  <td>86 mg/dl (4.8 mmol/l)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Pain</th>
+                  <td>Unable to assess</td>
+                </tr>
+                <tr>
+                  <th scope="row">Temp</th>
+                  <td>96.5°F (35.8°C)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane" id="criticalDoneVitalSignsTabPane" role="tabpanel" aria-labelledby="criticalDoneVitalSigns">
+            <table class="table table-hover">
+              <thead>
+                <tr class="table-primary">
+                  <th scope="col">Type</th>
+                  <th scope="col">Info</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-danger">
+                  <!-- table-danger could be used on major problems the evaluator wants to keep an eye on -->
+                  <th scope="row">X</th>
+                  <td>Major external hemorrhage at lower right leg</td>
+                </tr>
+                <tr>
+                  <th scope="row">A</th>
+                  <td>Patent</td>
+                </tr>
+                <tr class="table-active">
+                  <!-- Use the table-active class for the last row the student clicked on -->
+                  <th scope="row">B</th>
+                  <td>8, shallow, irregular</td>
+                </tr>
+                <tr class="table-warning">
+                  <!-- table-warning could be used on minor problems the evaluator wants to keep an eye on -->
+                  <th scope="row">C</th>
+                  <td>130, weak radial pulses</td>
+                </tr>
+                <tr>
+                  <th scope="row">D</th>
+                  <td>8 (E-2, V-2, M-4), PERRLA, sluggish</td>
+                </tr>
+                <tr class="table-danger">
+                  <th scope="row">E</th>
+                  <td>Multiple lacerations to face, scalp, right arm, amputation at the right ankle</td>
+                </tr>
+                <tr>
+                  <th scope="row">BP</th>
+                  <td>96/palpation</td>
+                </tr>
+                <tr>
+                  <th scope="row">P</th>
+                  <td>120, weak radial pulses</td>
+                </tr>
+                <tr>
+                  <th scope="row">R</th>
+                  <td>12, assisted; LS clear and equal with crepitus on right</td>
+                </tr>
+                <tr>
+                  <th scope="row">Skin</th>
+                  <td>Pale, diaphoretic</td>
+                </tr>
+                <tr>
+                  <th scope="row">Spo<sub>2</sub></th>
+                  <td>99%/O<sub>2</sub></td>
+                </tr>
+                <tr>
+                  <th scope="row">ETCO<sub>2</sub></th>
+                  <td>45 mm Hg</td>
+                </tr>
+                <tr>
+                  <th scope="row">GCS</th>
+                  <td>8 (E-2, V-2, M-4), PERRLA, sluggish</td>
+                </tr>
+                <tr>
+                  <th scope="row">Glucose</th>
+                  <td>86 mg/dl (4.8 mmol/l)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Pain</th>
+                  <td>Unable to assess</td>
+                </tr>
+                <tr>
+                  <th scope="row">Temp</th>
+                  <td>96.5°F (35.8°C)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane" id="criticalNotDoneVitalSignsTabPane" role="tabpanel" aria-labelledby="criticalNotDoneVitalSigns">
+            <table class="table table-hover">
+              <thead>
+                <tr class="table-primary">
+                  <th scope="col">Type</th>
+                  <th scope="col">Info</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-danger">
+                  <!-- table-danger could be used on major problems the evaluator wants to keep an eye on -->
+                  <th scope="row">X</th>
+                  <td>Major external hemorrhage at lower right leg</td>
+                </tr>
+                <tr>
+                  <th scope="row">A</th>
+                  <td>Patent</td>
+                </tr>
+                <tr class="table-active">
+                  <!-- Use the table-active class for the last row the student clicked on -->
+                  <th scope="row">B</th>
+                  <td>8, shallow, irregular</td>
+                </tr>
+                <tr class="table-warning">
+                  <!-- table-warning could be used on minor problems the evaluator wants to keep an eye on -->
+                  <th scope="row">C</th>
+                  <td>130, weak radial pulses</td>
+                </tr>
+                <tr>
+                  <th scope="row">D</th>
+                  <td>8 (E-2, V-2, M-4), PERRLA, sluggish</td>
+                </tr>
+                <tr class="table-danger">
+                  <th scope="row">E</th>
+                  <td>Multiple lacerations to face, scalp, right arm, amputation at the right ankle</td>
+                </tr>
+                <tr>
+                  <th scope="row">BP</th>
+                  <td>78/palpation</td>
+                </tr>
+                <tr>
+                  <th scope="row">P</th>
+                  <td>130, weak radial pulses</td>
+                </tr>
+                <tr>
+                  <th scope="row">R</th>
+                  <td>44, shallow; LS clear and equal with crepitus on right</td>
+                </tr>
+                <tr>
+                  <th scope="row">Skin</th>
+                  <td>Cyanotic, diaphoretic</td>
+                </tr>
+                <tr>
+                  <th scope="row">Spo<sub>2</sub></th>
+                  <td>No capture</td>
+                </tr>
+                <tr>
+                  <th scope="row">ETCO<sub>2</sub></th>
+                  <td>32 mm Hg</td>
+                </tr>
+                <tr>
+                  <th scope="row">GCS</th>
+                  <td>4 (E-1, V-1, M-1), pupils equal and dilated</td>
+                </tr>
+                <tr>
+                  <th scope="row">Glucose</th>
+                  <td>86 mg/dl (4.8 mmol/l)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Pain</th>
+                  <td>Unable to assess</td>
+                </tr>
+                <tr>
+                  <th scope="row">Temp</th>
+                  <td>94.8°F (34.9°C)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
       <div class="col-8">
         <!-- <h2>Checklist</h2> -->
