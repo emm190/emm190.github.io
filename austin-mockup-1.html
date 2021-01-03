@@ -10,7 +10,8 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">Click here to hide information (placeholder)</a>
+      <!-- <a class="navbar-brand" href="#">Click here to hide information (placeholder)</a> -->
+      <button data-toggle="collapse" data-target="#information-panel" type="button" class="btn btn-success">Info</button>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
@@ -39,7 +40,7 @@
       </div>
     </nav>
     <div class="row">
-      <div class="col-4">
+      <div id="information-panel" class="col-4 show">
         <div class="d-inline-flex p-2">
           <h2>Information</h2>
           <button type="button" class="btn btn-primary">Scenario Information</button>
