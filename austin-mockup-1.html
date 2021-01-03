@@ -10,7 +10,8 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">Click here to hide information (placeholder)</a>
+      <!-- <a class="navbar-brand" href="#">Click here to hide information (placeholder)</a> -->
+      <button data-toggle="collapse" data-target="#information-panel" type="button" class="btn btn-success">Info</button>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
@@ -39,10 +40,10 @@
       </div>
     </nav>
     <div class="row">
-      <div class="col-4">
+      <div id="information-panel" class="col-4 show">
         <div class="d-inline-flex p-2">
           <h2>Information</h2>
-          <button type="button" class="btn btn-primary">Scenario Information</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#scenarioInfoModal">Scenario Information</button>
         </div>
         <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -166,7 +167,7 @@
                               <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="customCheckSSU5">
                                 <label class="custom-control-label" for="customCheckSSU5">Considers stabilization of spine</label>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSSUSpine">(or do)</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSSUSpine">DO</button>
                               </div>
                             </div>
                           </li>
@@ -400,6 +401,37 @@
         <li class="list-group-item">
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="collapseListGroupHeadingProfessionalism">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheckProfessionalism">
+                  <label class="custom-control-label" for="customCheckProfessionalism">
+                    <h4 class="panel-title">
+                    <a class="collapsed" data-toggle="collapse" href="#collapseListGroupProfessionalism" aria-expanded="false" aria-controls="collapseListGroupProfessionalism">
+                      Professionalism
+                    </a>
+                    </h4>
+                  </label>
+                </div>
+              </div>
+              <div id="collapseListGroupProfessionalism" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="collapseListGroupHeadingProfessionalism">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheckProfessionalism1">
+                      <textarea class="form-control" id="ProfessionalismFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- End entry -->
+        <!-- Begin entry -->
+        <!--
+        <li class="list-group-item">
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="collapseListGroupHeadingSample">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" id="customCheckSample">
@@ -437,6 +469,7 @@
             </div>
           </div>
         </li>
+        -->
         <!-- End entry -->
         <!-- Begin modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -482,6 +515,29 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End modal -->
+        <!-- Begin modal -->
+        <div class="modal fade" id="scenarioInfoModal" tabindex="-1" role="dialog" aria-labelledby="scenarioInfoModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="scenarioInfoModalLabel">Scenario Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h2>Dispatch Information</h2>
+                <p>You and your partners work for a transporting EMS agency and have been dispatched to a residential housing development for a lawn mower accident. It is 1330 hr on a Saturday afternoon and the temperature is 90°F (32°C). You are 5 minutes away from a level III trauma center and 25 minutes from a level I trauma center.</p>
+                <h2>Scene Assessment/General Impression</h2>
+                <p>You arrive at a suburban yard where you observe a large riding lawn mower on its side at the bottom of an 8-ft (2.5-m) hill. A bystander is holding a towel to the patient’s right lower leg. As you approach the patient, the bystander tells you that he saw the mower tip over while the patient was driving it.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
