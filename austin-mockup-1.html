@@ -167,7 +167,7 @@
                               <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="customCheckSSU5">
                                 <label class="custom-control-label" for="customCheckSSU5">Considers stabilization of spine</label>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSSUSpine">(or do)</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSSUSpine">DO</button>
                               </div>
                             </div>
                           </li>
@@ -401,6 +401,37 @@
         <li class="list-group-item">
           <div class="panel-group" role="tablist">
             <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="collapseListGroupHeadingProfessionalism">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheckProfessionalism">
+                  <label class="custom-control-label" for="customCheckProfessionalism">
+                    <h4 class="panel-title">
+                    <a class="collapsed" data-toggle="collapse" href="#collapseListGroupProfessionalism" aria-expanded="false" aria-controls="collapseListGroupProfessionalism">
+                      Professionalism
+                    </a>
+                    </h4>
+                  </label>
+                </div>
+              </div>
+              <div id="collapseListGroupProfessionalism" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="collapseListGroupHeadingProfessionalism">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheckProfessionalism1">
+                      <textarea class="form-control" id="ProfessionalismFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- End entry -->
+        <!-- Begin entry -->
+        <!--
+        <li class="list-group-item">
+          <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="collapseListGroupHeadingSample">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" id="customCheckSample">
@@ -438,6 +469,7 @@
             </div>
           </div>
         </li>
+        -->
         <!-- End entry -->
         <!-- Begin modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
