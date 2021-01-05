@@ -41,7 +41,13 @@
             </form>
             <ul class="nav nav-tabs">
               <li class="nav-item">
-                <a class="nav-link active" id="secondaryVitalSigns" data-toggle="tab" href="#secondaryVitalSignsTabPane" role="tab" aria-controls="secondaryVitalSignsTabPane" aria-selected="true">Secondary</a>
+                <a class="nav-link active" id="sceneSizeupSigns" data-toggle="tab" href="#sceneSizeupVitalSignsTabPane" role="tab" aria-controls="sceneSizeupVitalSignsTabPane" aria-selected="true">Scene Sizeup</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="primaryVitalSigns" data-toggle="tab" href="#primaryVitalSignsTabPane" role="tab" aria-controls="primaryVitalSignsTabPane" aria-selected="false">Primary</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="secondaryVitalSigns" data-toggle="tab" href="#secondaryVitalSignsTabPane" role="tab" aria-controls="secondaryVitalSignsTabPane" aria-selected="false">Secondary</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" id="criticalDoneVitalSigns" data-toggle="tab" href="#criticalDoneVitalSignsTabPane" role="tab" aria-controls="criticalDoneVitalSignsTabPane" aria-selected="false">Critical Done</a>
@@ -51,7 +57,7 @@
               </li>
             </ul>
             <div class="tab-content" id="raterInfoTabContent">
-              <div class="tab-pane active" id="secondaryVitalSignsTabPane" role="tabpanel" aria-labelledby="secondaryVitalSigns">
+              <div class="tab-pane active" id="sceneSizeupSignsTabPane" role="tabpanel" aria-labelledby="sceneSizeupSigns">
                 <table class="table table-hover">
                   <thead>
                     <tr class="table-primary">
@@ -59,7 +65,7 @@
                       <th scope="col">Info</th>
                     </tr>
                   </thead>
-                  <tbody id="raterInfoTableSecondary">
+                  <tbody id="raterInfoTableSceneSizeup">
                     <tr class="table-danger">
                       <!-- table-danger could be used on major problems the evaluator wants to keep an eye on -->
                       <th scope="row">X</th>
@@ -130,7 +136,7 @@
                   </tbody>
                 </table>
               </div>
-              <div class="tab-pane" id="criticalDoneVitalSignsTabPane" role="tabpanel" aria-labelledby="criticalDoneVitalSigns">
+              <div class="tab-pane" id="primaryVitalSignsTabPane" role="tabpanel" aria-labelledby="primaryVitalSigns">
                 <table class="table table-hover">
                   <thead>
                     <tr class="table-primary">
@@ -138,7 +144,7 @@
                       <th scope="col">Info</th>
                     </tr>
                   </thead>
-                  <tbody id="raterInfoTableCriticalDone">
+                  <tbody id="raterInfoTablePrimary">
                     <tr class="table-danger">
                       <!-- table-danger could be used on major problems the evaluator wants to keep an eye on -->
                       <th scope="row">X</th>
@@ -166,6 +172,70 @@
                       <th scope="row">E</th>
                       <td>Multiple lacerations to face, scalp, right arm, amputation at the right ankle</td>
                     </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tab-pane" id="secondaryVitalSignsTabPane" role="tabpanel" aria-labelledby="secondaryVitalSigns">
+                <table class="table table-hover">
+                  <thead>
+                    <tr class="table-primary">
+                      <th scope="col">Type</th>
+                      <th scope="col">Info</th>
+                    </tr>
+                  </thead>
+                  <tbody id="raterInfoTableSecondary">
+                    <tr>
+                      <th scope="row">BP</th>
+                      <td>96/palpation</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">P</th>
+                      <td>130, weak radial pulses</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">R</th>
+                      <td>38, shallow; LS clear and equal with crepitus on right</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Skin</th>
+                      <td>Cyanotic, diaphoretic</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Spo<sub>2</sub></th>
+                      <td>78%/RA</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ETCO<sub>2</sub></th>
+                      <td>64 mm Hg</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">GCS</th>
+                      <td>8 (E-2, V-2, M-4), PERRLA</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Glucose</th>
+                      <td>86 mg/dl (4.8 mmol/l)</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Pain</th>
+                      <td>Unable to assess</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Temp</th>
+                      <td>96.5°F (35.8°C)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tab-pane" id="criticalDoneVitalSignsTabPane" role="tabpanel" aria-labelledby="criticalDoneVitalSigns">
+                <table class="table table-hover">
+                  <thead>
+                    <tr class="table-primary">
+                      <th scope="col">Type</th>
+                      <th scope="col">Info</th>
+                    </tr>
+                  </thead>
+                  <tbody id="raterInfoTableCriticalDone">
                     <tr>
                       <th scope="row">BP</th>
                       <td>96/palpation</td>
@@ -218,33 +288,6 @@
                     </tr>
                   </thead>
                   <tbody id="raterInfoTableCriticalNotDone">
-                    <tr class="table-danger">
-                      <!-- table-danger could be used on major problems the evaluator wants to keep an eye on -->
-                      <th scope="row">X</th>
-                      <td>Major external hemorrhage at lower right leg</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">A</th>
-                      <td>Patent</td>
-                    </tr>
-                    <tr class="table-active">
-                      <!-- Use the table-active class for the last row the student clicked on -->
-                      <th scope="row">B</th>
-                      <td>8, shallow, irregular</td>
-                    </tr>
-                    <tr class="table-warning">
-                      <!-- table-warning could be used on minor problems the evaluator wants to keep an eye on -->
-                      <th scope="row">C</th>
-                      <td>130, weak radial pulses</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">D</th>
-                      <td>8 (E-2, V-2, M-4), PERRLA, sluggish</td>
-                    </tr>
-                    <tr class="table-danger">
-                      <th scope="row">E</th>
-                      <td>Multiple lacerations to face, scalp, right arm, amputation at the right ankle</td>
-                    </tr>
                     <tr>
                       <th scope="row">BP</th>
                       <td>78/palpation</td>
@@ -740,11 +783,27 @@
     $(document).ready(function(){
     $("#raterInfoSearch").on("keyup", function() {
     var input = $(this).val().toLowerCase();
-    $("#raterInfoTableSecondary tr").filter(function() {
+    $("#raterInfoTableSceneSizeup tr").filter(function() {
     $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
     });
     });
     });
+    $('#sceneSizeupSigns').on('click', function (e) {
+    $("#raterInfoSearch").on("keyup", function() {
+    var input = $(this).val().toLowerCase();
+    $("#raterInfoTableSceneSizeup tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
+    });
+    });
+    })
+    $('#primaryVitalSigns').on('click', function (e) {
+    $("#raterInfoSearch").on("keyup", function() {
+    var input = $(this).val().toLowerCase();
+    $("#raterInfoTablePrimary tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
+    });
+    });
+    })
     $('#secondaryVitalSigns').on('click', function (e) {
     $("#raterInfoSearch").on("keyup", function() {
     var input = $(this).val().toLowerCase();
