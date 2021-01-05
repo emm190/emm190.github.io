@@ -6,38 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>MedDBriefer Mockup 12-27-20</title>
+    <title>MedDBriefer Mockup 1-4-21</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
       <!-- <a class="navbar-brand" href="#">Click here to hide information (placeholder)</a> -->
-      <button data-toggle="collapse" data-target="#informationPanel" type="button" class="btn btn-success">Info</button>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Option1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Option2</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown link
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-      </div>
+      <button data-toggle="collapse" data-target="#informationPanel" type="button" class="btn btn-success">Collapse Info</button>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link active text-white bg-info" id="secondaryVitalSigns" data-toggle="tab" href="#secondaryVitalSignsTabPane" role="tab" aria-controls="secondaryVitalSignsTabPane" aria-selected="true">Secondary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white bg-info" id="criticalDoneVitalSigns" data-toggle="tab" href="#criticalDoneVitalSignsTabPane" role="tab" aria-controls="criticalDoneVitalSignsTabPane" aria-selected="false">Critical Done</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white bg-info" id="criticalNotDoneVitalSigns" data-toggle="tab" href="#criticalNotDoneVitalSignsTabPane" role="tab" aria-controls="criticalNotDoneVitalSignsTabPane" aria-selected="false">Critical NOT Done</a>
+        </li>
+      </ul>
     </nav>
     <div class="row">
       <div id="informationPanel" class="col-4 show">
