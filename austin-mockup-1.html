@@ -6,297 +6,355 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>MedDBriefer Mockup 12-27-20</title>
+    <title>MedDBriefer Mockup 1-4-21</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
       <!-- <a class="navbar-brand" href="#">Click here to hide information (placeholder)</a> -->
-      <button data-toggle="collapse" data-target="#informationPanel" type="button" class="btn btn-success">Info</button>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Option1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Option2</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown link
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-      </div>
+      <button data-toggle="collapse" data-target="#informationPanel" type="button" class="btn btn-success mr-1">Collapse Info</button>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link active text-white bg-info mr-1" id="scenarioInfoTab" data-toggle="tab" href="#scenarioInfoTabPane" role="tab" aria-controls="scenarioInfoTabPane" aria-selected="true">Scenario Info</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white bg-info mr-1" id="raterInfoTab" data-toggle="tab" href="#raterInfoTabPane" role="tab" aria-controls="raterInfoTabPane" aria-selected="false">Rater Info</a>
+        </li>
+      </ul>
     </nav>
     <div class="row">
       <div id="informationPanel" class="col-4 show">
-        <div class="d-inline-flex p-2">
-          <h2>Information</h2>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#scenarioInfoModal">Scenario Information</button>
-        </div>
-        <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-        </form>
-        <ul class="nav nav-tabs">
-          <li class="nav-item">
-            <a class="nav-link active" id="secondaryVitalSigns" data-toggle="tab" href="#secondaryVitalSignsTabPane" role="tab" aria-controls="secondaryVitalSignsTabPane" aria-selected="true">Secondary</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="criticalDoneVitalSigns" data-toggle="tab" href="#criticalDoneVitalSignsTabPane" role="tab" aria-controls="criticalDoneVitalSignsTabPane" aria-selected="false">Critical Done</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="criticalNotDoneVitalSigns" data-toggle="tab" href="#criticalNotDoneVitalSignsTabPane" role="tab" aria-controls="criticalNotDoneVitalSignsTabPane" aria-selected="false">Critical NOT Done</a>
-          </li>
-        </ul>
         <div class="tab-content" id="informationPanelTabContent">
-          <div class="tab-pane active" id="secondaryVitalSignsTabPane" role="tabpanel" aria-labelledby="secondaryVitalSigns">
-            <table class="table table-hover">
-              <thead>
-                <tr class="table-primary">
-                  <th scope="col">Type</th>
-                  <th scope="col">Info</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table-danger">
-                  <!-- table-danger could be used on major problems the evaluator wants to keep an eye on -->
-                  <th scope="row">X</th>
-                  <td>Major external hemorrhage at lower right leg</td>
-                </tr>
-                <tr>
-                  <th scope="row">A</th>
-                  <td>Patent</td>
-                </tr>
-                <tr class="table-active">
-                  <!-- Use the table-active class for the last row the student clicked on -->
-                  <th scope="row">B</th>
-                  <td>8, shallow, irregular</td>
-                </tr>
-                <tr class="table-warning">
-                  <!-- table-warning could be used on minor problems the evaluator wants to keep an eye on -->
-                  <th scope="row">C</th>
-                  <td>130, weak radial pulses</td>
-                </tr>
-                <tr>
-                  <th scope="row">D</th>
-                  <td>8 (E-2, V-2, M-4), PERRLA, sluggish</td>
-                </tr>
-                <tr class="table-danger">
-                  <th scope="row">E</th>
-                  <td>Multiple lacerations to face, scalp, right arm, amputation at the right ankle</td>
-                </tr>
-                <tr>
-                  <th scope="row">BP</th>
-                  <td>96/palpation</td>
-                </tr>
-                <tr>
-                  <th scope="row">P</th>
-                  <td>130, weak radial pulses</td>
-                </tr>
-                <tr>
-                  <th scope="row">R</th>
-                  <td>38, shallow; LS clear and equal with crepitus on right</td>
-                </tr>
-                <tr>
-                  <th scope="row">Skin</th>
-                  <td>Cyanotic, diaphoretic</td>
-                </tr>
-                <tr>
-                  <th scope="row">Spo<sub>2</sub></th>
-                  <td>78%/RA</td>
-                </tr>
-                <tr>
-                  <th scope="row">ETCO<sub>2</sub></th>
-                  <td>64 mm Hg</td>
-                </tr>
-                <tr>
-                  <th scope="row">GCS</th>
-                  <td>8 (E-2, V-2, M-4), PERRLA</td>
-                </tr>
-                <tr>
-                  <th scope="row">Glucose</th>
-                  <td>86 mg/dl (4.8 mmol/l)</td>
-                </tr>
-                <tr>
-                  <th scope="row">Pain</th>
-                  <td>Unable to assess</td>
-                </tr>
-                <tr>
-                  <th scope="row">Temp</th>
-                  <td>96.5°F (35.8°C)</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="tab-pane active ml-2" id="scenarioInfoTabPane" role="tabpanel" aria-labelledby="scenarioInfoTab">
+            <h2>Scenario Information</h2>
+            <h3>Dispatch Information</h3>
+            <p>You and your partners work for a transporting EMS agency and have been dispatched to a residential housing development for a lawn mower accident. It is 1330 hr on a Saturday afternoon and the temperature is 90°F (32°C). You are 5 minutes away from a level III trauma center and 25 minutes from a level I trauma center.</p>
+            <h3>Scene Assessment/General Impression</h3>
+            <p>You arrive at a suburban yard where you observe a large riding lawn mower on its side at the bottom of an 8-ft (2.5-m) hill. A bystander is holding a towel to the patient’s right lower leg. As you approach the patient, the bystander tells you that he saw the mower tip over while the patient was driving it.</p>
           </div>
-          <div class="tab-pane" id="criticalDoneVitalSignsTabPane" role="tabpanel" aria-labelledby="criticalDoneVitalSigns">
-            <table class="table table-hover">
-              <thead>
-                <tr class="table-primary">
-                  <th scope="col">Type</th>
-                  <th scope="col">Info</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table-danger">
-                  <!-- table-danger could be used on major problems the evaluator wants to keep an eye on -->
-                  <th scope="row">X</th>
-                  <td>Major external hemorrhage at lower right leg</td>
-                </tr>
-                <tr>
-                  <th scope="row">A</th>
-                  <td>Patent</td>
-                </tr>
-                <tr class="table-active">
-                  <!-- Use the table-active class for the last row the student clicked on -->
-                  <th scope="row">B</th>
-                  <td>8, shallow, irregular</td>
-                </tr>
-                <tr class="table-warning">
-                  <!-- table-warning could be used on minor problems the evaluator wants to keep an eye on -->
-                  <th scope="row">C</th>
-                  <td>130, weak radial pulses</td>
-                </tr>
-                <tr>
-                  <th scope="row">D</th>
-                  <td>8 (E-2, V-2, M-4), PERRLA, sluggish</td>
-                </tr>
-                <tr class="table-danger">
-                  <th scope="row">E</th>
-                  <td>Multiple lacerations to face, scalp, right arm, amputation at the right ankle</td>
-                </tr>
-                <tr>
-                  <th scope="row">BP</th>
-                  <td>96/palpation</td>
-                </tr>
-                <tr>
-                  <th scope="row">P</th>
-                  <td>120, weak radial pulses</td>
-                </tr>
-                <tr>
-                  <th scope="row">R</th>
-                  <td>12, assisted; LS clear and equal with crepitus on right</td>
-                </tr>
-                <tr>
-                  <th scope="row">Skin</th>
-                  <td>Pale, diaphoretic</td>
-                </tr>
-                <tr>
-                  <th scope="row">Spo<sub>2</sub></th>
-                  <td>99%/O<sub>2</sub></td>
-                </tr>
-                <tr>
-                  <th scope="row">ETCO<sub>2</sub></th>
-                  <td>45 mm Hg</td>
-                </tr>
-                <tr>
-                  <th scope="row">GCS</th>
-                  <td>8 (E-2, V-2, M-4), PERRLA, sluggish</td>
-                </tr>
-                <tr>
-                  <th scope="row">Glucose</th>
-                  <td>86 mg/dl (4.8 mmol/l)</td>
-                </tr>
-                <tr>
-                  <th scope="row">Pain</th>
-                  <td>Unable to assess</td>
-                </tr>
-                <tr>
-                  <th scope="row">Temp</th>
-                  <td>96.5°F (35.8°C)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="tab-pane" id="criticalNotDoneVitalSignsTabPane" role="tabpanel" aria-labelledby="criticalNotDoneVitalSigns">
-            <table class="table table-hover">
-              <thead>
-                <tr class="table-primary">
-                  <th scope="col">Type</th>
-                  <th scope="col">Info</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table-danger">
-                  <!-- table-danger could be used on major problems the evaluator wants to keep an eye on -->
-                  <th scope="row">X</th>
-                  <td>Major external hemorrhage at lower right leg</td>
-                </tr>
-                <tr>
-                  <th scope="row">A</th>
-                  <td>Patent</td>
-                </tr>
-                <tr class="table-active">
-                  <!-- Use the table-active class for the last row the student clicked on -->
-                  <th scope="row">B</th>
-                  <td>8, shallow, irregular</td>
-                </tr>
-                <tr class="table-warning">
-                  <!-- table-warning could be used on minor problems the evaluator wants to keep an eye on -->
-                  <th scope="row">C</th>
-                  <td>130, weak radial pulses</td>
-                </tr>
-                <tr>
-                  <th scope="row">D</th>
-                  <td>8 (E-2, V-2, M-4), PERRLA, sluggish</td>
-                </tr>
-                <tr class="table-danger">
-                  <th scope="row">E</th>
-                  <td>Multiple lacerations to face, scalp, right arm, amputation at the right ankle</td>
-                </tr>
-                <tr>
-                  <th scope="row">BP</th>
-                  <td>78/palpation</td>
-                </tr>
-                <tr>
-                  <th scope="row">P</th>
-                  <td>130, weak radial pulses</td>
-                </tr>
-                <tr>
-                  <th scope="row">R</th>
-                  <td>44, shallow; LS clear and equal with crepitus on right</td>
-                </tr>
-                <tr>
-                  <th scope="row">Skin</th>
-                  <td>Cyanotic, diaphoretic</td>
-                </tr>
-                <tr>
-                  <th scope="row">Spo<sub>2</sub></th>
-                  <td>No capture</td>
-                </tr>
-                <tr>
-                  <th scope="row">ETCO<sub>2</sub></th>
-                  <td>32 mm Hg</td>
-                </tr>
-                <tr>
-                  <th scope="row">GCS</th>
-                  <td>4 (E-1, V-1, M-1), pupils equal and dilated</td>
-                </tr>
-                <tr>
-                  <th scope="row">Glucose</th>
-                  <td>86 mg/dl (4.8 mmol/l)</td>
-                </tr>
-                <tr>
-                  <th scope="row">Pain</th>
-                  <td>Unable to assess</td>
-                </tr>
-                <tr>
-                  <th scope="row">Temp</th>
-                  <td>94.8°F (34.9°C)</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="tab-pane ml-2" id="raterInfoTabPane" role="tabpanel" aria-labelledby="raterInfoTab">
+            <div class="d-inline-flex p-2">
+              <h2>Rater Information</h2>
+            </div>
+            <form class="form-inline">
+              <input id="raterInfoSearch" class="form-control mr-sm-2 mb-1" type="search" placeholder="Search" aria-label="Search">
+              <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+            </form>
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" id="sceneSizeupSigns" data-toggle="tab" href="#sceneSizeupVitalSignsTabPane" role="tab" aria-controls="sceneSizeupVitalSignsTabPane" aria-selected="true">Scene Sizeup</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="primaryVitalSigns" data-toggle="tab" href="#primaryVitalSignsTabPane" role="tab" aria-controls="primaryVitalSignsTabPane" aria-selected="false">Primary</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="secondaryVitalSigns" data-toggle="tab" href="#secondaryVitalSignsTabPane" role="tab" aria-controls="secondaryVitalSignsTabPane" aria-selected="false">Secondary</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="criticalDoneVitalSigns" data-toggle="tab" href="#criticalDoneVitalSignsTabPane" role="tab" aria-controls="criticalDoneVitalSignsTabPane" aria-selected="false">Critical Done</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="criticalNotDoneVitalSigns" data-toggle="tab" href="#criticalNotDoneVitalSignsTabPane" role="tab" aria-controls="criticalNotDoneVitalSignsTabPane" aria-selected="false">Critical NOT Done</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="sampleSigns" data-toggle="tab" href="#sampleSignsTabPane" role="tab" aria-controls="sampleSignsTabPane" aria-selected="false">Sample</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="bodySystems" data-toggle="tab" href="#bodySystemsTabPane" role="tab" aria-controls="bodySystemsTabPane" aria-selected="false">Body Systems</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="raterInfoTabContent">
+              <div class="tab-pane active" id="sceneSizeupVitalSignsTabPane" role="tabpanel" aria-labelledby="sceneSizeupSigns">
+                <table class="table table-hover">
+                  <thead>
+                    <tr class="table-primary">
+                      <th scope="col">Type</th>
+                      <th scope="col">Info</th>
+                    </tr>
+                  </thead>
+                  <tbody id="raterInfoTableSceneSizeup">
+                    <tr>
+                      <th scope="row">Safety</th>
+                      <td>Safe</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Number of Patients</th>
+                      <td>1</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tab-pane" id="primaryVitalSignsTabPane" role="tabpanel" aria-labelledby="primaryVitalSigns">
+                <table class="table table-hover">
+                  <thead>
+                    <tr class="table-primary">
+                      <th scope="col">Type</th>
+                      <th scope="col">Info</th>
+                    </tr>
+                  </thead>
+                  <tbody id="raterInfoTablePrimary">
+                    <tr class="table-danger">
+                      <!-- table-danger could be used on major problems the evaluator wants to keep an eye on -->
+                      <th scope="row">X</th>
+                      <td>Major external hemorrhage at lower right leg</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">A</th>
+                      <td>Patent</td>
+                    </tr>
+                    <tr class="table-active">
+                      <!-- Use the table-active class for the last row the student clicked on -->
+                      <th scope="row">B</th>
+                      <td>8, shallow, irregular</td>
+                    </tr>
+                    <tr class="table-warning">
+                      <!-- table-warning could be used on minor problems the evaluator wants to keep an eye on -->
+                      <th scope="row">C</th>
+                      <td>130, weak radial pulses</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">D</th>
+                      <td>8 (E-2, V-2, M-4), PERRLA, sluggish</td>
+                    </tr>
+                    <tr class="table-danger">
+                      <th scope="row">E</th>
+                      <td>Multiple lacerations to face, scalp, right arm, amputation at the right ankle</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tab-pane" id="secondaryVitalSignsTabPane" role="tabpanel" aria-labelledby="secondaryVitalSigns">
+                <table class="table table-hover">
+                  <thead>
+                    <tr class="table-primary">
+                      <th scope="col">Type</th>
+                      <th scope="col">Info</th>
+                    </tr>
+                  </thead>
+                  <tbody id="raterInfoTableSecondary">
+                    <tr>
+                      <th scope="row">BP</th>
+                      <td>96/palpation</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">P</th>
+                      <td>130, weak radial pulses</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">R</th>
+                      <td>38, shallow; LS clear and equal with crepitus on right</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Skin</th>
+                      <td>Cyanotic, diaphoretic</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Spo<sub>2</sub></th>
+                      <td>78%/RA</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ETCO<sub>2</sub></th>
+                      <td>64 mm Hg</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">GCS</th>
+                      <td>8 (E-2, V-2, M-4), PERRLA</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Glucose</th>
+                      <td>86 mg/dl (4.8 mmol/l)</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Pain</th>
+                      <td>Unable to assess</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Temp</th>
+                      <td>96.5°F (35.8°C)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tab-pane" id="criticalDoneVitalSignsTabPane" role="tabpanel" aria-labelledby="criticalDoneVitalSigns">
+                <table class="table table-hover">
+                  <thead>
+                    <tr class="table-primary">
+                      <th scope="col">Type</th>
+                      <th scope="col">Info</th>
+                    </tr>
+                  </thead>
+                  <tbody id="raterInfoTableCriticalDone">
+                    <tr>
+                      <th scope="row">BP</th>
+                      <td>96/palpation</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">P</th>
+                      <td>120, weak radial pulses</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">R</th>
+                      <td>12, assisted; LS clear and equal with crepitus on right</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Skin</th>
+                      <td>Pale, diaphoretic</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Spo<sub>2</sub></th>
+                      <td>99%/O<sub>2</sub></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ETCO<sub>2</sub></th>
+                      <td>45 mm Hg</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">GCS</th>
+                      <td>8 (E-2, V-2, M-4), PERRLA, sluggish</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Glucose</th>
+                      <td>86 mg/dl (4.8 mmol/l)</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Pain</th>
+                      <td>Unable to assess</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Temp</th>
+                      <td>96.5°F (35.8°C)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tab-pane" id="criticalNotDoneVitalSignsTabPane" role="tabpanel" aria-labelledby="criticalNotDoneVitalSigns">
+                <table class="table table-hover">
+                  <thead>
+                    <tr class="table-primary">
+                      <th scope="col">Type</th>
+                      <th scope="col">Info</th>
+                    </tr>
+                  </thead>
+                  <tbody id="raterInfoTableCriticalNotDone">
+                    <tr>
+                      <th scope="row">BP</th>
+                      <td>78/palpation</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">P</th>
+                      <td>130, weak radial pulses</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">R</th>
+                      <td>44, shallow; LS clear and equal with crepitus on right</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Skin</th>
+                      <td>Cyanotic, diaphoretic</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Spo<sub>2</sub></th>
+                      <td>No capture</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ETCO<sub>2</sub></th>
+                      <td>32 mm Hg</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">GCS</th>
+                      <td>4 (E-1, V-1, M-1), pupils equal and dilated</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Glucose</th>
+                      <td>86 mg/dl (4.8 mmol/l)</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Pain</th>
+                      <td>Unable to assess</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Temp</th>
+                      <td>94.8°F (34.9°C)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tab-pane" id="sampleSignsTabPane" role="tabpanel" aria-labelledby="sampleSigns">
+                <table class="table table-hover">
+                  <thead>
+                    <tr class="table-primary">
+                      <th scope="col">Type</th>
+                      <th scope="col">Info</th>
+                    </tr>
+                  </thead>
+                  <tbody id="raterInfoTableSampleSigns">
+                    <tr>
+                      <th scope="row">Signs/symptoms</th>
+                      <td>Shortness of breath</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Allergies</th>
+                      <td>Unknown</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Medications</th>
+                      <td>Unknown</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Past medical history</th>
+                      <td>Unknown</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Last oral intake</th>
+                      <td>Unknown</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Event leading to incident</th>
+                      <td>Riding a lawnmower on an incline and it rolled over the patient</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tab-pane" id="bodySystemsTabPane" role="tabpanel" aria-labelledby="bodySystems">
+                <table class="table table-hover">
+                  <thead>
+                    <tr class="table-primary">
+                      <th scope="col">Type</th>
+                      <th scope="col">Info</th>
+                    </tr>
+                  </thead>
+                  <tbody id="raterInfoTableBodySystems">
+                    <tr>
+                      <th scope="row">Head</th>
+                      <td>Multiple lacerations with minor bleeding</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Neck</th>
+                      <td>Unremarkable</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Chest</th>
+                      <td>Red marks to right chest</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Abdomen</th>
+                      <td>Soft, nontender</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Pelvis</th>
+                      <td>Stable</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Extremities</th>
+                      <td>Amputation of right leg at the ankle</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Back</th>
+                      <td>Unremarkable</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -470,6 +528,7 @@
                                       <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheckIARBreathing2">
                                         <label class="custom-control-label" for="customCheckIARBreathing2">Assess adequate ventilation</label>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalIARBreathingVentilation">DO</button>
                                       </div>
                                     </li>
                                     <li class="list-group-item">
@@ -714,6 +773,52 @@
         </div>
         <!-- End modal -->
         <!-- Begin modal -->
+        <div class="modal fade" id="modalIARBreathingVentilation" tabindex="-1" role="dialog" aria-labelledby="modalIARBreathingVentilationLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalIARBreathingVentilationLabel">Assess adequate ventilation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="modalIARBreathingVentilationRadio1">
+                  <label class="form-check-label" for="modalIARBreathingVentilationRadio1">
+                    Endoctracheal intubation
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="modalIARBreathingVentilationRadio2">
+                  <label class="form-check-label" for="modalIARBreathingVentilationRadio2">
+                    Bag-valve mask
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="modalIARBreathingVentilationRadio3">
+                  <label class="form-check-label" for="modalIARBreathingVentilationRadio3">
+                    Other
+                  </label>
+                  <textarea class="form-control" id="modalIARBreathingVentilationOtherText" rows="3"></textarea>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modalIARBreathingVentilationInappropriateCheckbox">
+                  <div class="mb-3">
+                    <label for="modalIARBreathingVentilationInappropriateText" class="form-label">Inappropriate Intervention</label>
+                    <textarea class="form-control" id="modalIARBreathingVentilationInappropriateText" rows="3"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End modal -->
+        <!-- Begin modal -->
         <div class="modal fade" id="scenarioInfoModal" tabindex="-1" role="dialog" aria-labelledby="scenarioInfoModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -743,5 +848,72 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Note: The formatting is bad due to an HTML autoformatter I use. I will fix this if this is used in the actual implementation. -->
+    <script>
+    $(document).ready(function(){
+    $("#raterInfoSearch").on("keyup", function() {
+    var input = $(this).val().toLowerCase();
+    $("#raterInfoTableSceneSizeup tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
+    });
+    });
+    });
+    $('#sceneSizeupSigns').on('click', function (e) {
+    $("#raterInfoSearch").on("keyup", function() {
+    var input = $(this).val().toLowerCase();
+    $("#raterInfoTableSceneSizeup tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
+    });
+    });
+    })
+    $('#primaryVitalSigns').on('click', function (e) {
+    $("#raterInfoSearch").on("keyup", function() {
+    var input = $(this).val().toLowerCase();
+    $("#raterInfoTablePrimary tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
+    });
+    });
+    })
+    $('#secondaryVitalSigns').on('click', function (e) {
+    $("#raterInfoSearch").on("keyup", function() {
+    var input = $(this).val().toLowerCase();
+    $("#raterInfoTableSecondary tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
+    });
+    });
+    })
+    $('#criticalDoneVitalSigns').on('click', function (e) {
+    $("#raterInfoSearch").on("keyup", function() {
+    var input = $(this).val().toLowerCase();
+    $("#raterInfoTableCriticalDone tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
+    });
+    });
+    })
+    $('#criticalNotDoneVitalSigns').on('click', function (e) {
+    $("#raterInfoSearch").on("keyup", function() {
+    var input = $(this).val().toLowerCase();
+    $("#raterInfoTableCriticalNotDone tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
+    });
+    });
+    })
+    $('#sampleSigns').on('click', function (e) {
+    $("#raterInfoSearch").on("keyup", function() {
+    var input = $(this).val().toLowerCase();
+    $("#raterInfoTableSampleSigns tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
+    });
+    });
+    })
+    $('#bodySystems').on('click', function (e) {
+    $("#raterInfoSearch").on("keyup", function() {
+    var input = $(this).val().toLowerCase();
+    $("#raterInfoTableBodySystems tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
+    });
+    });
+    })
+    </script>
   </body>
 </html>
