@@ -36,7 +36,7 @@
               <h2>Rater Information</h2>
             </div>
             <form class="form-inline">
-              <input class="form-control mr-sm-2 mb-1" type="search" placeholder="Search" aria-label="Search">
+              <input id="raterInfoSearch" class="form-control mr-sm-2 mb-1" type="search" placeholder="Search" aria-label="Search">
               <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
             </form>
             <ul class="nav nav-tabs">
@@ -59,7 +59,7 @@
                       <th scope="col">Info</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="raterInfoTableSecondary">
                     <tr class="table-danger">
                       <!-- table-danger could be used on major problems the evaluator wants to keep an eye on -->
                       <th scope="row">X</th>
@@ -138,7 +138,7 @@
                       <th scope="col">Info</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="raterInfoTableCriticalDone">
                     <tr class="table-danger">
                       <!-- table-danger could be used on major problems the evaluator wants to keep an eye on -->
                       <th scope="row">X</th>
@@ -217,7 +217,7 @@
                       <th scope="col">Info</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="raterInfoTableCriticalNotDone">
                     <tr class="table-danger">
                       <!-- table-danger could be used on major problems the evaluator wants to keep an eye on -->
                       <th scope="row">X</th>
@@ -735,5 +735,40 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Note: The formatting is bad due to an HTML autoformatter I use. I will fix this if this is used in the actual implementation. -->
+    <script>
+    $(document).ready(function(){
+    $("#raterInfoSearch").on("keyup", function() {
+    var input = $(this).val().toLowerCase();
+    $("#raterInfoTableSecondary tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
+    });
+    });
+    });
+    $('#secondaryVitalSigns').on('click', function (e) {
+    $("#raterInfoSearch").on("keyup", function() {
+    var input = $(this).val().toLowerCase();
+    $("#raterInfoTableSecondary tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
+    });
+    });
+    })
+    $('#criticalDoneVitalSigns').on('click', function (e) {
+    $("#raterInfoSearch").on("keyup", function() {
+    var input = $(this).val().toLowerCase();
+    $("#raterInfoTableCriticalDone tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
+    });
+    });
+    })
+    $('#criticalNotDoneVitalSigns').on('click', function (e) {
+    $("#raterInfoSearch").on("keyup", function() {
+    var input = $(this).val().toLowerCase();
+    $("#raterInfoTableCriticalNotDone tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
+    });
+    });
+    })
+    </script>
   </body>
 </html>
