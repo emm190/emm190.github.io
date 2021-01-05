@@ -528,6 +528,7 @@
                                       <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheckIARBreathing2">
                                         <label class="custom-control-label" for="customCheckIARBreathing2">Assess adequate ventilation</label>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalIARBreathingVentilation">DO</button>
                                       </div>
                                     </li>
                                     <li class="list-group-item">
@@ -761,6 +762,52 @@
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" id="modalSSUSpineCheck2">
                   <label class="custom-control-label" for="modalSSUSpineCheck2">(Assistant) applies cervical collar</label>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End modal -->
+        <!-- Begin modal -->
+        <div class="modal fade" id="modalIARBreathingVentilation" tabindex="-1" role="dialog" aria-labelledby="modalIARBreathingVentilationLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalIARBreathingVentilationLabel">Considers stabilization of spine</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="modalIARBreathingVentilationRadio1">
+                  <label class="form-check-label" for="modalIARBreathingVentilationRadio1">
+                    Endoctracheal intubation
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="modalIARBreathingVentilationRadio2">
+                  <label class="form-check-label" for="modalIARBreathingVentilationRadio2">
+                    Bag-valve mask
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="modalIARBreathingVentilationRadio3">
+                  <label class="form-check-label" for="modalIARBreathingVentilationRadio3">
+                    Other
+                  </label>
+                  <textarea class="form-control" id="modalIARBreathingVentilationOtherText" rows="3"></textarea>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modalIARBreathingVentilationInappropriateCheckbox">
+                  <div class="mb-3">
+                    <label for="modalIARBreathingVentilationInappropriateText" class="form-label">Inappropriate Intervention</label>
+                    <textarea class="form-control" id="modalIARBreathingVentilationInappropriateText" rows="3"></textarea>
+                  </div>
                 </div>
               </div>
               <div class="modal-footer">
