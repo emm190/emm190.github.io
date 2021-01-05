@@ -56,7 +56,10 @@
                 <a class="nav-link" id="criticalNotDoneVitalSigns" data-toggle="tab" href="#criticalNotDoneVitalSignsTabPane" role="tab" aria-controls="criticalNotDoneVitalSignsTabPane" aria-selected="false">Critical NOT Done</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="SampleSigns" data-toggle="tab" href="#SampleSignsTabPane" role="tab" aria-controls="SampleSignsTabPane" aria-selected="false">Sample</a>
+                <a class="nav-link" id="sampleSigns" data-toggle="tab" href="#sampleSignsTabPane" role="tab" aria-controls="sampleSignsTabPane" aria-selected="false">Sample</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="bodySystems" data-toggle="tab" href="#bodySystemsTabPane" role="tab" aria-controls="bodySystemsTabPane" aria-selected="false">Body Systems</a>
               </li>
             </ul>
             <div class="tab-content" id="raterInfoTabContent">
@@ -334,7 +337,7 @@
                   </tbody>
                 </table>
               </div>
-              <div class="tab-pane" id="SampleSignsTabPane" role="tabpanel" aria-labelledby="SampleSigns">
+              <div class="tab-pane" id="sampleSignsTabPane" role="tabpanel" aria-labelledby="sampleSigns">
                 <table class="table table-hover">
                   <thead>
                     <tr class="table-primary">
@@ -343,6 +346,58 @@
                     </tr>
                   </thead>
                   <tbody id="raterInfoTableSampleSigns">
+                    <tr>
+                      <th scope="row">BP</th>
+                      <td>78/palpation</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">P</th>
+                      <td>130, weak radial pulses</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">R</th>
+                      <td>44, shallow; LS clear and equal with crepitus on right</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Skin</th>
+                      <td>Cyanotic, diaphoretic</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Spo<sub>2</sub></th>
+                      <td>No capture</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">ETCO<sub>2</sub></th>
+                      <td>32 mm Hg</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">GCS</th>
+                      <td>4 (E-1, V-1, M-1), pupils equal and dilated</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Glucose</th>
+                      <td>86 mg/dl (4.8 mmol/l)</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Pain</th>
+                      <td>Unable to assess</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Temp</th>
+                      <td>94.8°F (34.9°C)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tab-pane" id="bodySystemsTabPane" role="tabpanel" aria-labelledby="bodySystems">
+                <table class="table table-hover">
+                  <thead>
+                    <tr class="table-primary">
+                      <th scope="col">Type</th>
+                      <th scope="col">Info</th>
+                    </tr>
+                  </thead>
+                  <tbody id="raterInfoTableBodySystems">
                     <tr>
                       <th scope="row">BP</th>
                       <td>78/palpation</td>
@@ -879,6 +934,22 @@
     $("#raterInfoSearch").on("keyup", function() {
     var input = $(this).val().toLowerCase();
     $("#raterInfoTableCriticalNotDone tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
+    });
+    });
+    })
+    $('#sampleSigns').on('click', function (e) {
+    $("#raterInfoSearch").on("keyup", function() {
+    var input = $(this).val().toLowerCase();
+    $("#raterInfoTableSampleSigns tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
+    });
+    });
+    })
+    $('#bodySystems').on('click', function (e) {
+    $("#raterInfoSearch").on("keyup", function() {
+    var input = $(this).val().toLowerCase();
+    $("#raterInfoTableBodySystems tr").filter(function() {
     $(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
     });
     });
