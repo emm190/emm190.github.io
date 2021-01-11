@@ -84,6 +84,7 @@
 							<!-- <a class="collapsed" data-toggle="collapse" href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1"> -->
 							Checklist
 							<!-- </a> -->
+							<a class="btn btn-secondary btn-sm" id="selectedInterventionsFilter" href="#selectedInterventionsFilter" role="button">Filter by Selected Interventions</a>
 							</h2>
 						</div>
 						<div id="collapseListGroup1" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="collapseListGroupHeading1">
@@ -299,13 +300,13 @@
 																		<li class="list-group-item">
 																			<div class="custom-control custom-checkbox">
 																				<input type="checkbox" class="custom-control-input" id="customCheckIARCirculation3">
-																				<label class="custom-control-label" for="customCheckIARCirculation3">Assesses for &controls major bleeding if present</label>
+																				<label class="custom-control-label MDBSelectedIntervention" for="customCheckIARCirculation3">Assesses for &controls major bleeding if present</label>
 																			</div>
 																		</li>
 																		<li class="list-group-item">
 																			<div class="custom-control custom-checkbox">
 																				<input type="checkbox" class="custom-control-input" id="customCheckIARCirculation4">
-																				<label class="custom-control-label" for="customCheckIARCirculation4">Initiates shock management</label>
+																				<label class="custom-control-label MDBSelectedIntervention" for="customCheckIARCirculation4">Initiates shock management</label>
 																			</div>
 																		</li>
 																	</ul>
@@ -637,6 +638,18 @@ $(document).on('click', 'input', function(event) {
 		$('#' + $currID + 'SelectedIntervention').prop('checked', $isChecked);  // Synchronizes the two checkboxes TODO: See if we need to account for when there is no selected intervention for this callout
 	}
 });
+
+	//only show the selected interventions
+	$(document).ready(function() {
+    $("#selectedInterventionsFilter").click(function(){
+        $("label").not(".custom-control-label.MDBSelectedIntervention").toggle();
+				//or (below) could have an option to highlight
+				//$("label").filter(".custom-control-label.MDBSelectedIntervention").css( "background-color", "yellow" );
+				//and this (below) just hides everything that isn't a selected intervention
+				//$("label").not(".custom-control-label.MDBSelectedIntervention").hide();
+    });
+});
+
 </script>
 </body>
 </html>
