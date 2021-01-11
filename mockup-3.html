@@ -1067,16 +1067,27 @@ $(document).on('click', 'input', function(event) {
 	}
 });
 
-	//only show the selected interventions
-	$(document).ready(function() {
+//only show the selected interventions
+$(document).ready(function() {
     $("#selectedInterventionsFilter").click(function(){
-        $("label").not(".custom-control-label.MDBSelectedIntervention").toggle();
+		$("label").not(".custom-control-label.MDBSelectedIntervention").toggle();
+		$("button").not(".btn.btn-primary.selectedInterventionException").toggle(); // Hide all do buttons except the ones with selected interventions
+
 				//or (below) could have an option to highlight
 				//$("label").filter(".custom-control-label.MDBSelectedIntervention").css( "background-color", "yellow" );
 				//and this (below) just hides everything that isn't a selected intervention
 				//$("label").not(".custom-control-label.MDBSelectedIntervention").hide();
     });
 });
+
+var checkedItemsMaster = 0; // Checked items bitfield
+var critItemsPerformed = BigInt(0x3FFFFFFFFFFFFF); // will change, just temp
+
+// positionNum: checklist item's place in checklist (starting from 0)
+function toggleChecked(positionNum) {
+	checkedItemsMaster = checkedItemsMaster ^ ( 1 << positionNum ); // xor allows for easy toggling
+	console.log(checkedItemsMaster);
+}
 
 </script>
 </body>
