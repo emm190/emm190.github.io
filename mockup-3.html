@@ -239,14 +239,20 @@
 																		<li class="list-group-item">
 																			<div class="custom-control custom-checkbox">
 																				<input type="checkbox" class="custom-control-input" id="customCheckIARBreathing1">
-																				<label class="custom-control-label" for="customCheckIARBreathing1">Assess breathing</label>
+																				<label class="custom-control-label" for="customCheckIARBreathing1">Assesses breathing</label>
 																			</div>
 																		</li>
 																		<li class="list-group-item">
 																			<div class="custom-control custom-checkbox">
 																				<input type="checkbox" class="custom-control-input" id="customCheckIARBreathing2">
-																				<label class="custom-control-label" for="customCheckIARBreathing2">Assess adequate ventilation</label>
+																				<label class="custom-control-label" for="customCheckIARBreathing2">Assesses adequate ventilation</label>
 																				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalIARBreathingVentilation">DO</button>
+																			</div>
+																		</li>
+																		<li class="list-group-item">
+																			<div class="custom-control custom-checkbox">
+																				<input type="checkbox" class="custom-control-input" id="customCheckIARBreathing3">
+																				<label class="custom-control-label" for="customCheckIARBreathing3">Provides adequate ventilation as needed</label>
 																			</div>
 																		</li>
 																		<li class="list-group-item">
@@ -294,19 +300,21 @@
 																		<li class="list-group-item">
 																			<div class="custom-control custom-checkbox">
 																				<input type="checkbox" class="custom-control-input" id="customCheckIARCirculation2">
-																				<label class="custom-control-label" for="customCheckIARCirculation2">Assess skin [color, temperature, or condition]</label>
+																				<label class="custom-control-label" for="customCheckIARCirculation2">Assesses skin [color, temperature, or condition]</label>
 																			</div>
 																		</li>
 																		<li class="list-group-item">
 																			<div class="custom-control custom-checkbox">
 																				<input type="checkbox" class="custom-control-input" id="customCheckIARCirculation3">
-																				<label class="custom-control-label MDBSelectedIntervention" for="customCheckIARCirculation3">Assesses for &controls major bleeding if present</label>
+																				<label class="custom-control-label MDBSelectedIntervention" for="customCheckIARCirculation3">Assesses for & controls major bleeding if present</label>
+																				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelBleedingIntervention">DO</button>
 																			</div>
 																		</li>
 																		<li class="list-group-item">
 																			<div class="custom-control custom-checkbox">
 																				<input type="checkbox" class="custom-control-input" id="customCheckIARCirculation4">
 																				<label class="custom-control-label MDBSelectedIntervention" for="customCheckIARCirculation4">Initiates shock management</label>
+																				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelShockIntervention">DO</button>
 																			</div>
 																		</li>
 																	</ul>
@@ -319,6 +327,13 @@
 														<div class="custom-control custom-checkbox">
 															<input type="checkbox" class="custom-control-input" id="customCheckIAR4">
 															<label class="custom-control-label" for="customCheckIAR4">Identifies priority patients/makes transport decision based upon calculated GCS</label>
+														</div>
+													</li>
+													<li class="list-group-item">
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="customCheckIAR5">
+															<label class="custom-control-label MDBSelectedIntervention" for="customCheckIAR5">Assesses for and provides spinal immobilization when indicated</label>
+																<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelSpinalImmobilization">DO</button>
 														</div>
 													</li>
 												</ul>
@@ -398,27 +413,200 @@
 					</div>
 				</div>
 			</div>
+			<!-- Start selected intervention -->
 			<div class="tab-pane ml-2" id="selectedInterventionTabPane" role="tabpanel" aria-labelledby="selectedInterventionTab">
 				<div class="panel-group" role="tablist">
 					<div class="panel panel-default">
-						<div class="panel-heading" role="tab" id="collapseListGroupHeading1SelectedIntervention">
-							<h2 class="panel-title">
-							Selected Interventions
-							</h2>
-						</div>
-						<div id="collapseListGroup1SelectedIntervention" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="collapseListGroupHeading1SelectedIntervention">
-							<ul class="list-group">
-								<li class="list-group-item">
-									<div class="custom-control custom-checkbox">
-										<input type="checkbox" class="custom-control-input" id="customCheckSSU1SelectedIntervention">
-										<label class="custom-control-label" for="customCheckSSU1SelectedIntervention"><a class="MDBCallout" href=#>Determines the scene/situation is safe</a></label>
+						<li class="list-group-item">
+							<div class="panel-group" role="tablist">
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="collapseListGroupHeadingSpinalIntervention">
+											<label  for="customCheckSpinalIntervention">
+												<h4 class="panel-title">
+												<a class="collapsed" data-toggle="collapse" href="#collapseListSpinalIntervention" aria-expanded="false" aria-controls="collapseListSpinalIntervention">
+													Spinal Immobilization Intervention
+												</a>
+												</h4>
+											</label>
 									</div>
-								</li>
-							</ul>
-						</div>
+									<div id="collapseListSpinalIntervention" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="collapseListGroupHeadingSpinalIntervention">
+										<ul class="list-group">
+											<li class="list-group-item">
+												<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="modelSpinalImmobilizationCheckbox1SelectedIntervention">
+													<label class="custom-control-label" for="modelSpinalImmobilizationCheckbox1SelectedIntervention"><a class="MDBCallout">Did not immediately direct or take manual immobilization of head</a></label>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="modelSpinalImmobilizationCheckbox2SelectedIntervention">
+													<label class="custom-control-label" for="modelSpinalImmobilizationCheckbox2SelectedIntervention"><a class="MDBCallout">Did not prperly apply appropriately sized cervical collar before ordering releaseof manual immobilization</a></label>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="modelSpinalImmobilizationCheckbox3SelectedIntervention">
+													<label class="custom-control-label" for="modelSpinalImmobilizationCheckbox3SelectedIntervention"><a class="MDBCallout">Released or ordered relase of manual immobilization before it was maintained mechanically</a></label>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="modelSpinalImmobilizationCheckbox4SelectedIntervention">
+													<label class="custom-control-label" for="modelSpinalImmobilizationCheckbox4SelectedIntervention"><a class="MDBCallout">Manipulated or moved patient excessively causing potential spinal compromise</a></label>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="modelSpinalImmobilizationCheckbox5SelectedIntervention">
+													<label class="custom-control-label" for="modelSpinalImmobilizationCheckbox5SelectedIntervention"><a class="MDBCallout">Head immobilized to the device before device sufficiently secured to torso</a></label>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="modelSpinalImmobilizationCheckbox6SelectedIntervention">
+													<label class="custom-control-label" for="modelSpinalImmobilizationCheckbox6SelectedIntervention"><a class="MDBCallout">Patient moves excessively up, down, left, or right on the device</a></label>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="modelSpinalImmobilizationCheckbox7SelectedIntervention">
+													<label class="custom-control-label" for="modelSpinalImmobilizationCheckbox7SelectedIntervention"><a class="MDBCallout">Head immobilization allows for excessive movement</a></label>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="modelSpinalImmobilizationCheckbox8SelectedIntervention">
+													<label class="custom-control-label" for="modelSpinalImmobilizationCheckbox8SelectedIntervention"><a class="MDBCallout">Upon completion of immobilization, head is not in a neutral, in-line position</a></label>
+												</div>
+											</li>
+											<li class="list-group-item">
+												<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="modelSpinalImmobilizationCheckbox9SelectedIntervention">
+													<label class="custom-control-label" for="modelSpinalImmobilizationCheckbox9SelectedIntervention"><a class="MDBCallout">Did not reassess motor, sensory, and circulatory functions in each extremity after immobilizing patient to the device</a></label>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<!-- Start selected intervention 2 -->
+								<div class="tab-pane active" id="selectedInterventionTabPane" role="tabpanel" aria-labelledby="selectedInterventionTab">
+									<div class="panel-group" role="tablist">
+										<div class="panel panel-default">
+											<li class="list-group-item">
+												<div class="panel-group" role="tablist">
+													<div class="panel panel-default">
+														<div class="panel-heading" role="tab" id="collapseListGroupHeadingShockIntervention">
+																<label  for="customCheckSpinalIntervention">
+																	<h4 class="panel-title">
+																	<a class="collapsed" data-toggle="collapse" href="#collapseListShockIntervention" aria-expanded="false" aria-controls="collapseListShockIntervention">
+																		Shock Management Intervention
+																	</a>
+																	</h4>
+																</label>
+														</div>
+														<div id="collapseListShockIntervention" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="collapseListGroupHeadingShockIntervention">
+															<ul class="list-group">
+																<li class="list-group-item">
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input" id="modelShockInterventionCheckbox1SelectedIntervention">
+																		<label class="custom-control-label" for="modelShockInterventionCheckbox1SelectedIntervention"><a class="MDBCallout">Fails to establish a patent and properly adjusted IV within 6-minute time limit</a></label>
+																	</div>
+																</li>
+																<li class="list-group-item">
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input" id="modelShockInterventionCheckbox2SelectedIntervention">
+																		<label class="custom-control-label" for="modelShockInterventionCheckbox2SelectedIntervention"><a class="MDBCallout">Fails to establish IV within 3 attempts during 6-minute time limit</a></label>
+																	</div>
+																</li>
+																<li class="list-group-item">
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input" id="modelShockInterventionCheckbox3SelectedIntervention">
+																		<label class="custom-control-label" for="modelShockInterventionCheckbox3SelectedIntervention"><a class="MDBCallout">Contaminates equipment or site without appropriately correcting situation</a></label>
+																	</div>
+																</li>
+																<li class="list-group-item">
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input" id="modelShockInterventionCheckbox4SelectedIntervention">
+																		<label class="custom-control-label" for="modelShockInterventionCheckbox4SelectedIntervention"><a class="MDBCallout">Performs any improper technique resulting in the potential for uncontrolled hemorrhage, catheter shear, or air embolism</a></label>
+																	</div>
+																</li>
+																<li class="list-group-item">
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input" id="modelShockInterventionCheckbox5SelectedIntervention">
+																		<label class="custom-control-label" for="modelShockInterventionCheckbox5SelectedIntervention"><a class="MDBCallout">Fails to dispose/verbalize disposal of blood-contaminated sharps immediately in proper container at point of use</a></label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</li>
+											<!-- Start selected intervention 2 -->
+											<div id="selectedInterventionTabPane" role="tabpanel" aria-labelledby="selectedInterventionTab">
+												<div class="panel-group" role="tablist">
+													<div class="panel panel-default">
+														<li class="list-group-item">
+															<div class="panel-group" role="tablist">
+																<div class="panel panel-default">
+																	<div class="panel-heading" role="tab" id="collapseListGroupHeadingBleedingIntervention">
+																			<label  for="customCheckSpinalIntervention">
+																				<h4 class="panel-title">
+																				<a class="collapsed" data-toggle="collapse" href="#collapseListBleedingIntervention" aria-expanded="false" aria-controls="collapseListBleedingIntervention">
+																					Bleeding Management Intervention
+																				</a>
+																				</h4>
+																			</label>
+																	</div>
+																	<div id="collapseListBleedingIntervention" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="collapseListGroupHeadingBleedingIntervention">
+																		<ul class="list-group">
+																			<li class="list-group-item">
+																				<div class="custom-control custom-checkbox">
+																					<input type="checkbox" class="custom-control-input" id="modelBleedingInterventionCheckbox1SelectedIntervention">
+																					<label class="custom-control-label" for="modelBleedingInterventionCheckbox1SelectedIntervention"><a class="MDBCallout">Did not control hemorrhage using correct procedures in a timely manner</a></label>
+																				</div>
+																			</li>
+																			<li class="list-group-item">
+																				<div class="custom-control custom-checkbox">
+																					<input type="checkbox" class="custom-control-input" id="modelBleedingInterventionCheckbox2SelectedIntervention">
+																					<label class="custom-control-label" for="modelBleedingInterventionCheckbox2SelectedIntervention"><a class="MDBCallout">Did not apply direct pressure to wound before applying tourniquet</a></label>
+																				</div>
+																			</li>
+																			<li class="list-group-item">
+																				<div class="custom-control custom-checkbox">
+																					<input type="checkbox" class="custom-control-input" id="modelBleedingInterventionCheckbox3SelectedIntervention">
+																					<label class="custom-control-label" for="modelBleedingInterventionCheckbox3SelectedIntervention"><a class="MDBCallout">Did not properly position the patient</a></label>
+																				</div>
+																			</li>
+																			<li class="list-group-item">
+																				<div class="custom-control custom-checkbox">
+																					<input type="checkbox" class="custom-control-input" id="modelBleedingInterventionCheckbox4SelectedIntervention">
+																					<label class="custom-control-label" for="modelBleedingInterventionCheckbox4SelectedIntervention"><a class="MDBCallout">Did not take steps to prevent heat loss</a></label>
+																				</div>
+																			</li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
+														</li>
+													</div>
+												</div>
+											</div>
+											<!-- End selected intervention 2 -->
+										</div>
+									</div>
+								</div>
+								<!-- End selected intervention 2 -->
+
+
+
+
+							</div>
+						</li>
 					</div>
 				</div>
 			</div>
+			<!-- End selected intervention -->
 		</div>
 		<!-- <h2>Checklist</h2> -->
 		<!-- Begin entry -->
@@ -560,6 +748,246 @@
 			</div>
 		</div>
 		<!-- End modal -->
+		<!-- Begin modal -->
+		<div class="modal fade" id="modelSpinalImmobilization" tabindex="-1" role="dialog" aria-labelledby="modelSpinalImmobilizationLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modelSpinalImmobilizationLabel">Spinal Motion Restriction - Supine Long Board</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<!-- Radio button options -->
+					<div class="modal-body">
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="flexRadioDefault" id="modelSpinalImmobilizationRadio1">
+							<label class="form-check-label" for="modelSpinalImmobilizationRadio1">
+								Scoop Stretcher
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="flexRadioDefault" id="modelSpinalImmobilizationRadio2">
+							<label class="form-check-label" for="modelSpinalImmobilizationRadio2">
+								Supine Long Backboard
+							</label>
+						</div>
+						<!-- Performance criteria -->
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelSpinalImmobilizationCheckbox1">
+							<div class="mb-3">
+								<label for="modelSpinalImmobilizationCheckbox1" class="form-label">Did not immediately direct or take manual immobilization of head</label>
+							</div>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelSpinalImmobilizationCheckbox2">
+							<div class="mb-3">
+								<label for="modelSpinalImmobilizationCheckbox2" class="form-label">Did not prperly apply appropriately sized cervical collar before ordering releaseof manual immobilization</label>
+							</div>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelSpinalImmobilizationCheckbox3">
+							<div class="mb-3">
+								<label for="modelSpinalImmobilizationCheckbox3" class="form-label">Released or ordered relase of manual immobilization before it was maintained mechanically</label>
+							</div>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelSpinalImmobilizationCheckbox4">
+							<div class="mb-3">
+								<label for="modelSpinalImmobilizationCheckbox4" class="form-label">Manipulated or moved patient excessively causing potential spinal compromise</label>
+							</div>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelSpinalImmobilizationCheckbox5">
+							<div class="mb-3">
+								<label for="modelSpinalImmobilizationCheckbox5" class="form-label">Head immobilized to the device before device sufficiently secured to torso</label>
+							</div>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelSpinalImmobilizationCheckbox6">
+							<div class="mb-3">
+								<label for="modelSpinalImmobilizationCheckbox6" class="form-label">Patient moves excessively up, down, left, or right on the device</label>
+							</div>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelSpinalImmobilizationCheckbox7">
+							<div class="mb-3">
+								<label for="modelSpinalImmobilizationCheckbox7" class="form-label">Head immobilization allows for excessive movement</label>
+							</div>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelSpinalImmobilizationCheckbox8">
+							<div class="mb-3">
+								<label for="modelSpinalImmobilizationCheckbox8" class="form-label">Upon completion of immobilization, head is not in a neutral, in-line position</label>
+							</div>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelSpinalImmobilizationCheckbox9">
+							<div class="mb-3">
+								<label for="modelSpinalImmobilizationCheckbox9" class="form-label">Did not reassess motor, sensory, and circulatory functions in each extremity after immobilizing patient to the device</label>
+							</div>
+						</div>
+						<!-- Inappropriate Intervention box -->
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelSpinalImmobilizationInappropriateCheckbox">
+							<div class="mb-3">
+								<label for="modelSpinalImmobilizationInappropriateText" class="form-label">Inappropriate/Other Intervention</label>
+								<textarea class="form-control" id="modelSpinalImmobilizationInappropriateText" rows="3"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End modal -->
+		<!-- Begin shock intervention DO button modal -->
+		<div class="modal fade" id="modelShockIntervention" tabindex="-1" role="dialog" aria-labelledby="modelShockInterventionLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modelShockInterventionLabel">Shock management--Peripheral IV insertion</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<!-- Radio button options -->
+					<div class="modal-body">
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="flexRadioDefault" id="modelShockInterventionRadio1">
+							<label class="form-check-label" for="modelShockInterventionRadio1">
+								IV fluid therapy--Peripheral IV insertion
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="flexRadioDefault" id="modelShockInterventionRadio2">
+							<label class="form-check-label" for="modelShockInterventionRadio2">
+								IV fluid therapy--IV Push/Bolus
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="flexRadioDefault" id="modelShockInterventionRadio3">
+							<label class="form-check-label" for="modelShockInterventionRadio3">
+								Covers patient
+							</label>
+						</div>
+						<!-- Performance criteria -->
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelShockInterventionCheckbox1">
+							<div class="mb-3">
+								<label for="modelShockInterventionCheckbox1" class="form-label">Fails to establish a patent and properly adjusted IV within 6-minute time limit</label>
+							</div>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelShockInterventionCheckbox2">
+							<div class="mb-3">
+								<label for="modelShockInterventionCheckbox2" class="form-label">Fails to establish IV within 3 attempts during 6-minute time limit</label>
+							</div>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelShockInterventionCheckbox3">
+							<div class="mb-3">
+								<label for="modelShockInterventionCheckbox3" class="form-label">Contaminates equipment or site without appropriately correcting situation</label>
+							</div>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelShockInterventionCheckbox4">
+							<div class="mb-3">
+								<label for="modelShockInterventionCheckbox4" class="form-label">Performs any improper technique resulting in the potential for uncontrolled hemorrhage, catheter shear, or air embolism</label>
+							</div>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelShockInterventionCheckbox5">
+							<div class="mb-3">
+								<label for="modelShockInterventionCheckbox5" class="form-label">Fails to dispose/verbalize disposal of blood-contaminated sharps immediately in proper container at point of use</label>
+							</div>
+						</div>
+						<!-- Inappropriate Intervention box -->
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelShockInterventionInappropriateCheckbox">
+							<div class="mb-3">
+								<label for="modelShockInterventionInappropriateText" class="form-label">Inappropriate/Other Intervention</label>
+								<textarea class="form-control" id="modelShockInterventionInappropriateText" rows="3"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>s
+		<!-- End shock intervention DO button modal -->
+		<!-- Begin bleeding management intervention DO button modal -->
+		<div class="modal fade" id="modelBleedingIntervention" tabindex="-1" role="dialog" aria-labelledby="modelBleedingInterventionLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modelBleedingInterventionLabel">Bleeding Management</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<!-- Radio button options -->
+					<div class="modal-body">
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="flexRadioDefault" id="modelBleedingInterventionRadio1">
+							<label class="form-check-label" for="modelBleedingInterventionRadio1">
+								Applies direct pressure
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="flexRadioDefault" id="modelBleedingInterventionRadio2">
+							<label class="form-check-label" for="modelBleedingInterventionRadio2">
+								Applies tourniquet
+							</label>
+						</div>
+						<!-- Performance criteria -->
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelBleedingInterventionCheckbox1">
+							<div class="mb-3">
+								<label for="modelBleedingInterventionCheckbox1" class="form-label">Did not control hemorrhage using correct procedures in a timely manner</label>
+							</div>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelBleedingInterventionCheckbox2">
+							<div class="mb-3">
+								<label for="modelBleedingInterventionCheckbox2" class="form-label">Did not apply direct pressure to wound before applying tourniquet</label>
+							</div>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelBleedingInterventionCheckbox3">
+							<div class="mb-3">
+								<label for="modelBleedingInterventionCheckbox3" class="form-label">Did not properly position the patient</label>
+							</div>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelBleedingInterventionCheckbox4">
+							<div class="mb-3">
+								<label for="modelBleedingInterventionCheckbox4" class="form-label">Did not take steps to prevent heat loss</label>
+							</div>
+						</div>
+						<!-- Inappropriate Intervention box -->
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelBleedingInterventionInappropriateCheckbox">
+							<div class="mb-3">
+								<label for="modelBleedingInterventionInappropriateText" class="form-label">Inappropriate/Other Intervention</label>
+								<textarea class="form-control" id="modelBleedingInterventionInappropriateText" rows="3"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>s
+		<!-- End bleeding management intervention DO button modal -->
 		<!-- Begin modal -->
 		<div class="modal fade" id="scenarioInfoModal" tabindex="-1" role="dialog" aria-labelledby="scenarioInfoModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
