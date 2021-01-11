@@ -46,14 +46,14 @@
 						</ul>
 						<div class="tab-content" id="raterInfoTabContent">
 							<div class="tab-pane active" id="generalVitalSignsTabPane" role="tabpanel" aria-labelledby="generalSigns">
-								<table class="table table-hover">
+								<table class="table table-hover" id="raterInfoTableGeneral">
 									<thead>
 										<tr class="table-primary">
 											<th scope="col">Type</th>
 											<th scope="col">Info</th>
 										</tr>
 									</thead>
-									<tbody id="raterInfoTableGeneral">
+									<tbody>
 										<tr>
 											<th scope="row">Safety</th>
 											<td>Safe</td>
@@ -564,7 +564,7 @@
 	$(document).ready(function(){
 	$("#raterInfoSearch").on("keyup", function() {
 	var input = $(this).val().toLowerCase();
-	$("#raterInfoTableGeneral tr").filter(function() {
+	$("#raterInfoTableGeneral > tbody tr").filter(function() {
 	$(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
 	});
 	});
@@ -572,7 +572,7 @@
 	$('#generalSigns').on('click', function (e) {
 	$("#raterInfoSearch").on("keyup", function() {
 	var input = $(this).val().toLowerCase();
-	$("#raterInfoTableGeneral tr").filter(function() {
+	$("#raterInfoTableGeneral > tbody tr").filter(function() {
 	$(this).toggle($(this).text().toLowerCase().indexOf(input) !== -1)
 	});
 	});
@@ -586,6 +586,7 @@
 	$(document).on('click', 'a.MDBCallout', function(event) {
 		$currID = $(this).parent().prev().attr('id');
 	alert(callouts[$currID + "Type"] + ": " + callouts[$currID + "Info"]);
+	$('#raterInfoTableGeneral > tbody').prepend('<tr><th scope="row">' + callouts[$currID + "Type"] + '</th><td>' + callouts[$currID + "Info"] + '</td></tr><tr>');
 	$(this).parent().prev().prop('checked', true);
 	});
 	</script>
