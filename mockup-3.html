@@ -579,8 +579,13 @@
 	})
 	</script>
 	<script>
+		var callouts = {
+			"customCheckSSU1Type" : "Safety",
+			"customCheckSSU1Info" : "Safe",
+		};
 	$(document).on('click', 'a.MDBCallout', function(event) {
-	alert("Test" + $(this).parent().prev().attr('id'));
+		$currID = $(this).parent().prev().attr('id');
+	alert(callouts[$currID + "Type"] + ": " + callouts[$currID + "Info"]);
 	$(this).parent().prev().prop('checked', true);
 	});
 	</script>
