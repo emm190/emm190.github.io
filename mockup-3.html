@@ -15,7 +15,8 @@
 				position: fixed;
 				top: 50%;
 				right: 5%;
-				transform: translate(0, -50%)
+				transform: translate(0, -50%);
+				width: 25%;
 			}
 			.custom-control {
 				display: flex;
@@ -161,7 +162,7 @@
 																<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSSUSpine">DO</button>
 															</div>
 														</div>
-														<div class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2); margin-top: 5px">
+														<div class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2); border-radius: 5px; margin-top: 5px">
 															<div class="custom-control custom-checkbox">
 																<input type="checkbox" class="custom-control-input" id="customCheckSSU6">
 																<label class="custom-control-label" for="customCheckSSU6">Stabilizes or directs assistant to stabilize the cervical spine, as indicated</label>
@@ -240,7 +241,7 @@
 																				<label class="custom-control-label" for="customCheckIARAirway2">Inserts adjunct as indicated</label>
 																			</div>
 																		</li>
-																		<li class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2)">
+																		<li class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2);">
 																			<div class="custom-control custom-checkbox">
 																				<input type="checkbox" class="custom-control-input" id="customCheckIARAirway3">
 																				<label class="custom-control-label" for="customCheckIARAirway3">Appropriately manages airway if not patent</label>
@@ -434,7 +435,7 @@
 															<input type="checkbox" class="custom-control-input" id="customCheckIAR4">
 															<label class="custom-control-label" for="customCheckIAR4">Identifies priority patients and makes appropriate transport decisions</label>
 														</div>
-														<ul class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2); margin-top: 5px;">
+														<ul class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2); margin-top: 12px; border-radius: 5px;">
 															<li class="custom-control custom-checkbox">
 																<input type="checkbox" class="custom-control-input" id="customCheckTransport1">
 																<label class="custom-control-label" for="customCheckTransport1">Initiates or calls for transport of the patient within 10 minutes of time limit</label>
@@ -456,12 +457,8 @@
 													<li class="list-group-item">
 														<div class="custom-control custom-checkbox">
 															<input type="checkbox" class="custom-control-input" id="customCheckIAR5">
-<<<<<<< HEAD
-															<label class="custom-control-label" for="customCheckIAR5">Assesses for and provides spinal immobilization when indicated</label>
-=======
 															<label class="custom-control-label MDBSelectedIntervention" for="customCheckIAR5">Assesses for and provides spinal immobilization when indicated</label>
-																<button type="button" class="btn btn-primary selectedInterventionException" data-toggle="modal" data-target="#modelSpinalImmobilization">DO</button>
->>>>>>> main
+															<button type="button" class="btn btn-primary selectedInterventionException" data-toggle="modal" data-target="#modelSpinalImmobilization">DO</button>
 														</div>
 														<!-- <div class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2); margin-top: 5px">
 															<h5 class="panel-heading">
@@ -548,7 +545,7 @@
 														</h4>
 													</label>
 													
-													<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#vitalsInfoBox" aria-expanded="false" aria-controls="vitalsInfoBox">Vitals</button>
+													<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#vitalsInfoBox" aria-expanded="false" aria-controls="vitalsInfoBox" style="margin-bottom: 2%;">Vitals</button>
 													<div id="vitalsInfoBox" class="collapse m-1">
 														<div class="card card-body">
 															<p>BP: 96/P</p>
@@ -989,7 +986,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="flexRadioDefault" id="modelSpinalImmobilizationCheckbox2">
 							<div class="mb-3">
-								<label for="modelSpinalImmobilizationCheckbox2" class="form-label">Did not prperly apply appropriately sized cervical collar before ordering releaseof manual immobilization</label>
+								<label for="modelSpinalImmobilizationCheckbox2" class="form-label">Did not properly apply appropriately sized cervical collar before ordering releaseof manual immobilization</label>
 							</div>
 						</div>
 						<div class="form-check">
