@@ -7,9 +7,20 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<title>MedDBriefer Mockup 1-10-21</title>
+		<style>
+			body {
+				overflow-x: hidden;
+			}
+			#vitalsInfoBox {
+				position: fixed;
+				top: 50%;
+				right: 200px;
+				transform: translate(0, -50%)
+			}
+		</style>
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+		<nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-primary">
 			<!-- <a class="navbar-brand" href="#">Click here to hide information (placeholder)</a> -->
 			<button data-toggle="collapse" data-target="#informationPanel" type="button" class="btn btn-success mr-1">Info</button>
 		</ul>
@@ -481,15 +492,31 @@
 									<div class="panel-group" role="tablist">
 										<div class="panel panel-default">
 											<div class="panel-heading" role="tab" id="collapseListGroupHeadingHT">
-												<div class="custom-control custom-checkbox">
+												<div class="custom-control custom-checkbox>
 													<input type="checkbox" class="custom-control-input" id="customCheckHT">
 													<label class="custom-control-label" for="customCheckHT">
 														<h4 class="panel-title">
 														<a class="collapsed" data-toggle="collapse" href="#collapseListGroupHT" aria-expanded="false" aria-controls="collapseListGroupHT">
-															HISTORY TAKING
+															HISTORY TAKING 
 														</a>
 														</h4>
 													</label>
+													
+													<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#vitalsInfoBox" aria-expanded="false" aria-controls="vitalsInfoBox">Vitals</button>
+													<div id="vitalsInfoBox" class="collapse m-1">
+														<div class="card card-body">
+															<p>BP: 96/P</p>
+															<p>P: 130, weak radial pulses</p>
+															<p>R: 38, shallow; LS clear and equal with crepitus on right</p>
+															<p>Skin: Cyanotic, diaphoretic</p>
+															<p>Spo2: 78%/RA</p>
+															<p>ETCO2: 64 mm Hg</p>
+															<p>GCS: 8 (E-2, V-2, M-4), PERRLA</p>
+															<p>Glucose: 86 mg/dl (4.8 mmol/l)</p>
+															<p>Pain: unable to assess</p>
+															<p>Temp: 96.5°F (35.8°C)</p>
+														</div>
+													</div>
 												</div>
 											</div>
 											<div id="collapseListGroupHT" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="collapseListGroupHeadingHT">
