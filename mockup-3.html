@@ -14,13 +14,24 @@
 			#vitalsInfoBox {
 				position: fixed;
 				top: 50%;
-				right: 200px;
+				right: 5%;
 				transform: translate(0, -50%)
+			}
+			.custom-control {
+				display: flex;
+				align-items: center;
+			}
+			label {
+				padding: 0 10px 0 10px;
+			}
+			.panel-heading {
+				display: flex;
+				align-items: center;
 			}
 		</style>
 	</head>
 	<body>
-		<nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-primary">
+		<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
 			<!-- <a class="navbar-brand" href="#">Click here to hide information (placeholder)</a> -->
 			<button data-toggle="collapse" data-target="#informationPanel" type="button" class="btn btn-success mr-1">Info</button>
 		</ul>
@@ -320,7 +331,7 @@
 																				<label class="custom-control-label MDBSelectedIntervention" for="customCheckIARCirculation3">Assesses for & controls major bleeding if present</label>
 																				<button type="button" class="btn btn-primary selectedInterventionException" data-toggle="modal" data-target="#modelBleedingIntervention">DO</button>
 																			</div>
-																			<div class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2); margin-top: 5px">
+																			<!-- <div class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2); margin-top: 5px">
 																				<h5 class="panel-heading">
 																					<a class="collapsed" data-toggle="collapse" href="#collapseListGroupCritBleeding" aria-expanded="false" aria-controls="collapseListGroupCritBleeding">
 																					CRITICAL: Bleeding Management
@@ -352,7 +363,7 @@
 																						</div>
 																					</li>
 																				</ul>
-																			</div>
+																			</div> -->
 																		</li>
 																		<li class="list-group-item">
 																			<div class="custom-control custom-checkbox">
@@ -360,7 +371,7 @@
 																				<label class="custom-control-label MDBSelectedIntervention" for="customCheckIARCirculation4">Initiates shock management</label>
 																				<button type="button" class="btn btn-primary selectedInterventionException" data-toggle="modal" data-target="#modelShockIntervention">DO</button>
 																			</div>
-																			<div class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2); margin-top: 5px">
+																			<!-- <div class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2); margin-top: 5px">
 																				<h5 class="panel-heading">
 																					<a class="collapsed" data-toggle="collapse" href="#collapseListGroupCritShock" aria-expanded="false" aria-controls="collapseListGroupCritShock">
 																						CRITICAL: Shock Management -- Peripheral IV insertion
@@ -398,7 +409,7 @@
 																						</div>
 																					</li>
 																				</ul>
-																			</div>
+																			</div> -->
 																		</li>
 																	</ul>
 																</div>
@@ -417,7 +428,7 @@
 															<input type="checkbox" class="custom-control-input" id="customCheckIAR5">
 															<label class="custom-control-label" for="customCheckIAR5">Assesses for and provides spinal immobilization when indicated</label>
 														</div>
-														<div class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2); margin-top: 5px">
+														<!-- <div class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2); margin-top: 5px">
 															<h5 class="panel-heading">
 																<a class="collapsed" data-toggle="collapse" href="#collapseListGroupCritSpinal" aria-expanded="false" aria-controls="collapseListGroupCritSpinal">
 																	CRITICAL: Spinal Motion Restriction -- Supine Long Board
@@ -479,7 +490,7 @@
 																	</div>
 																</li>
 															</ul>
-														</div>
+														</div> -->
 													</li>
 												</ul>
 											</div>
@@ -492,7 +503,7 @@
 									<div class="panel-group" role="tablist">
 										<div class="panel panel-default">
 											<div class="panel-heading" role="tab" id="collapseListGroupHeadingHT">
-												<div class="custom-control custom-checkbox>
+												<div class="custom-control custom-checkbox" id="history-label">
 													<input type="checkbox" class="custom-control-input" id="customCheckHT">
 													<label class="custom-control-label" for="customCheckHT">
 														<h4 class="panel-title">
