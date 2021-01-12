@@ -132,7 +132,7 @@
 														</div>
 													</li>
 													<li class="list-group-item">
-														<div class="d-inline-flex p-2">
+														<div class="d-inline-flex">
 															<div class="custom-control custom-checkbox">
 																<input type="checkbox" class="custom-control-input" id="customCheckSSU5">
 																<label class="custom-control-label" for="customCheckSSU5">Considers stabilization of spine</label>
@@ -264,7 +264,7 @@
 																		<li class="list-group-item">
 																			<div class="custom-control custom-checkbox">
 																				<input type="checkbox" class="custom-control-input" id="customCheckIARBreathing4">
-																				<label class="custom-control-label" for="customCheckIARBreathing4">Manages & injure which may compromise breathing/ventilation</label>
+																				<label class="custom-control-label" for="customCheckIARBreathing4">Manages any injuries that may compromise breathing/ventilation</label>
 																			</div>
 																		</li>
 																	</ul>
@@ -304,17 +304,89 @@
 																			</div>
 																		</li>
 																		<li class="list-group-item">
-																			<div class="custom-control custom-checkbox">
+																			<div class="custom-control custom-checkbox selectedInterventionException">
 																				<input type="checkbox" class="custom-control-input" id="customCheckIARCirculation3">
 																				<label class="custom-control-label MDBSelectedIntervention" for="customCheckIARCirculation3">Assesses for & controls major bleeding if present</label>
-																				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelBleedingIntervention">DO</button>
+																				<button type="button" class="btn btn-primary selectedInterventionException" data-toggle="modal" data-target="#modelBleedingIntervention">DO</button>
+																			</div>
+																			<div class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2); margin-top: 5px">
+																				<h5 class="panel-heading">
+																					<a class="collapsed" data-toggle="collapse" href="#collapseListGroupCritBleeding" aria-expanded="false" aria-controls="collapseListGroupCritBleeding">
+																					CRITICAL: Bleeding Management
+																					</a>
+																				</h5>
+																				<ul style="padding: 0" id="collapseListGroupCritBleeding" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="collapseListGroupCritBleeding">
+																					<li class="list-group-item">
+																						<div class="custom-control custom-checkbox">
+																							<input type="checkbox" class="custom-control-input" id="customCheckCritBleeding1">
+																							<label class="custom-control-label" for="customCheckCritBleeding1">Did not control hemorrhage using correct procedures in a timely manner</label>
+																						</div>
+																					</li>
+																					<li class="list-group-item">
+																						<div class="custom-control custom-checkbox">
+																							<input type="checkbox" class="custom-control-input" id="customCheckCritBleeding2">
+																							<label class="custom-control-label" for="customCheckCritBleeding2">Did not apply direct pressure to wound before applying tourniquet</label>
+																						</div>
+																					</li>
+																					<li class="list-group-item">
+																						<div class="custom-control custom-checkbox">
+																							<input type="checkbox" class="custom-control-input" id="customCheckCritBleeding3">
+																							<label class="custom-control-label" for="customCheckCritBleeding3">Did not properly position the patient</label>
+																						</div>
+																					</li>
+																					<li class="list-group-item">
+																						<div class="custom-control custom-checkbox">
+																							<input type="checkbox" class="custom-control-input" id="customCheckCritBleeding4">
+																							<label class="custom-control-label" for="customCheckCritBleeding4">Did not take steps to prevent heat loss</label>
+																						</div>
+																					</li>
+																				</ul>
 																			</div>
 																		</li>
 																		<li class="list-group-item">
 																			<div class="custom-control custom-checkbox">
 																				<input type="checkbox" class="custom-control-input" id="customCheckIARCirculation4">
 																				<label class="custom-control-label MDBSelectedIntervention" for="customCheckIARCirculation4">Initiates shock management</label>
-																				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelShockIntervention">DO</button>
+																				<button type="button" class="btn btn-primary selectedInterventionException" data-toggle="modal" data-target="#modelShockIntervention">DO</button>
+																			</div>
+																			<div class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2); margin-top: 5px">
+																				<h5 class="panel-heading">
+																					<a class="collapsed" data-toggle="collapse" href="#collapseListGroupCritShock" aria-expanded="false" aria-controls="collapseListGroupCritShock">
+																						CRITICAL: Shock Management -- Peripheral IV insertion
+																					</a>
+																				</h5>
+																				<ul style="padding: 0" id="collapseListGroupCritShock" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="collapseListGroupCritShock">
+																					<li class="list-group-item">
+																						<div class="custom-control custom-checkbox">
+																							<input type="checkbox" class="custom-control-input" id="customCheckCritIV1">
+																							<label class="custom-control-label" for="customCheckCritIV1">Fails to establish a patent and properly adjusted IV within 6-minute time limit</label>
+																						</div>
+																					</li>
+																					<li class="list-group-item">
+																						<div class="custom-control custom-checkbox">
+																							<input type="checkbox" class="custom-control-input" id="customCheckCritIV2">
+																							<label class="custom-control-label" for="customCheckCritIV2">Fails to establish IV within 3 attempts during 6-minute time limit</label>
+																						</div>
+																					</li>
+																					<li class="list-group-item">
+																						<div class="custom-control custom-checkbox">
+																							<input type="checkbox" class="custom-control-input" id="customCheckCritIV3">
+																							<label class="custom-control-label" for="customCheckCritIV3">Contaminates equipment or site without appropriately correcting situation</label>
+																						</div>
+																					</li>
+																					<li class="list-group-item">
+																						<div class="custom-control custom-checkbox">
+																							<input type="checkbox" class="custom-control-input" id="customCheckCritIV4">
+																							<label class="custom-control-label" for="customCheckCritIV4">Performs any improper technique resulting in the potential for uncontrolled hemorrhage, catheter shear, or air embolism</label>
+																						</div>
+																					</li>
+																					<li class="list-group-item">
+																						<div class="custom-control custom-checkbox">
+																							<input type="checkbox" class="custom-control-input" id="customCheckCritIV5">
+																							<label class="custom-control-label" for="customCheckCritIV5">Fails to dispose/verbalize disposal of blood-contaminated sharps immediately in proper container at point of use</label>
+																						</div>
+																					</li>
+																				</ul>
 																			</div>
 																		</li>
 																	</ul>
@@ -332,8 +404,70 @@
 													<li class="list-group-item">
 														<div class="custom-control custom-checkbox">
 															<input type="checkbox" class="custom-control-input" id="customCheckIAR5">
-															<label class="custom-control-label MDBSelectedIntervention" for="customCheckIAR5">Assesses for and provides spinal immobilization when indicated</label>
-																<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelSpinalImmobilization">DO</button>
+															<label class="custom-control-label" for="customCheckIAR5">Assesses for and provides spinal immobilization when indicated</label>
+														</div>
+														<div class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2); margin-top: 5px">
+															<h5 class="panel-heading">
+																<a class="collapsed" data-toggle="collapse" href="#collapseListGroupCritSpinal" aria-expanded="false" aria-controls="collapseListGroupCritSpinal">
+																	CRITICAL: Spinal Motion Restriction -- Supine Long Board
+																</a>
+															</h5>
+															<ul style="padding: 0" id="collapseListGroupCritSpinal" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="collapseListGroupCritSpinal">
+																<li class="list-group-item">
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input" id="customCheckCritSpinal1">
+																		<label class="custom-control-label" for="customCheckCritSpinal1">Did not immediately direct or take manual immobilization of head</label>
+																	</div>
+																</li>
+																<li class="list-group-item">
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input" id="customCheckCritSpinal2">
+																		<label class="custom-control-label" for="customCheckCritSpinal2">Did not properly apply appropriately sized cervical collar before ordering releaseof manual immobilization</label>
+																	</div>
+																</li>
+																<li class="list-group-item">
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input" id="customCheckCritSpinal3">
+																		<label class="custom-control-label" for="customCheckCritSpinal3">Released or ordered relase of manual immobilization before it was maintained mechanically</label>
+																	</div>
+																</li>
+																<li class="list-group-item">
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input" id="customCheckCritSpinal4">
+																		<label class="custom-control-label" for="customCheckCritSpinal4">Manipulated or moved patient excessively causing potential spinal compromise</label>
+																	</div>
+																</li>
+																<li class="list-group-item">
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input" id="customCheckCritSpinal5">
+																		<label class="custom-control-label" for="customCheckCritSpinal5">Head immobilized to the device before device sufficiently secured to torso</label>
+																	</div>
+																</li>
+																<li class="list-group-item">
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input" id="customCheckCritSpinal6">
+																		<label class="custom-control-label" for="customCheckCritSpinal6">Patient moves excessively up, down, left, or right on the device</label>
+																	</div>
+																</li>
+																<li class="list-group-item">
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input" id="customCheckCritSpinal7">
+																		<label class="custom-control-label" for="customCheckCritSpinal7">Head immobilization allows for excessive movement</label>
+																	</div>
+																</li>
+																<li class="list-group-item">
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input" id="customCheckCritSpinal8">
+																		<label class="custom-control-label" for="customCheckCritSpinal8">Upon completion of immobilization, head is not in a neutral, in-line position</label>
+																	</div>
+																</li>
+																<li class="list-group-item">
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox" class="custom-control-input" id="customCheckCritSpinal9">
+																		<label class="custom-control-label" for="customCheckCritSpinal9">Did not reassess motor, sensory, and circulatory functions in each extremity after immobilizing patient to the device</label>
+																	</div>
+																</li>
+															</ul>
 														</div>
 													</li>
 												</ul>
