@@ -11,7 +11,7 @@
 			body {
 				overflow-x: hidden;
 			}
-			#vitalsInfoBox {
+			#vitalsInfoBox, #reassessmentVitalsInfoBox {
 				position: fixed;
 				top: 50%;
 				right: 5%;
@@ -26,6 +26,7 @@
 				padding: 0 10px 0 10px;
 			}
 			.panel-heading {
+				/* probably redundant */
 				display: flex;
 				align-items: center;
 			}
@@ -133,19 +134,19 @@
 													<li class="list-group-item">
 														<div class="custom-control custom-checkbox">
 															<input type="checkbox" class="custom-control-input" id="customCheckSSU1">
-															<label class="custom-control-label" for="customCheckSSU1"><a class="MDBCallout" href=#>Determines the scene/situation is safe</a></label>
+															<label class="custom-control-label" for="customCheckSSU1"><a class="MDBCallout" href=# data-toggle="modal" data-target="#modalSSUSafety">Determines the scene/situation is safe</a></label>
 														</div>
 													</li>
 													<li class="list-group-item">
 														<div class="custom-control custom-checkbox">
 															<input type="checkbox" class="custom-control-input" id="customCheckSSU2">
-															<label class="custom-control-label" for="customCheckSSU2">Determines the mechanism of injury/nature of illness</label>
+															<label class="custom-control-label" for="customCheckSSU2"><a class="MDBCallout" href=# data-toggle="modal" data-target="#modalSSUMechanismOfInjury">Determines the mechanism of injury/nature of illness</a></label>
 														</div>
 													</li>
 													<li class="list-group-item">
 														<div class="custom-control custom-checkbox">
 															<input type="checkbox" class="custom-control-input" id="customCheckSSU3">
-															<label class="custom-control-label" for="customCheckSSU3">Determines the number of patients</label>
+															<label class="custom-control-label" for="customCheckSSU3"><a class="MDBCallout" href=# data-toggle="modal" data-target="#modalSSUNumPatients">Determines the number of patients</a></label>
 														</div>
 													</li>
 													<li class="list-group-item">
@@ -196,7 +197,7 @@
 													<li class="list-group-item">
 														<div class="custom-control custom-checkbox">
 															<input type="checkbox" class="custom-control-input" id="customCheckIAR1">
-															<label class="custom-control-label" for="customCheckIAR1">Verbalizes general impression of the patient</label>
+															<label class="custom-control-label" for="customCheckIAR1"><a class="MDBCallout" href=# data-toggle="modal" data-target="#modalIARGeneralImpression">Verbalizes general impression of the patient</a></label>
 														</div>
 													</li>
 													<li class="list-group-item">
@@ -457,8 +458,7 @@
 													<li class="list-group-item">
 														<div class="custom-control custom-checkbox">
 															<input type="checkbox" class="custom-control-input" id="customCheckIAR5">
-															<label class="custom-control-label MDBSelectedIntervention" for="customCheckIAR5">Assesses for and provides spinal immobilization when indicated</label>
-																
+															<label class="custom-control-label MDBSelectedIntervention" for="customCheckIAR5">Assesses for and provides spinal immobilization when indicated</label>															
 															<button type="button" class="btn btn-primary selectedInterventionException" data-toggle="modal" data-target="#modelSpinalImmobilization">DO</button>
 														</div>
 														<!-- <div class="list-group-item" style="background-color: rgb(168, 50, 50, 0.2); margin-top: 5px">
@@ -879,6 +879,22 @@
 														<div class="custom-control custom-checkbox">
 															<input type="checkbox" class="custom-control-input" id="customCheck2ndInt2">
 															<label class="custom-control-label" for="customCheck2ndInt2"><a class="MDBCallout">Reassesses patient</a></label>
+
+															<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#reassessmentVitalsInfoBox" aria-expanded="false" aria-controls="reassessmentVitalsInfoBox" style="z-index: 1000;">Vitals</button>
+															<div id="reassessmentVitalsInfoBox" class="collapse m-1">
+																<div class="card card-body">
+																	<p>BP: 96/P</p>
+																	<p>P: 120, weak radial pulses</p>
+																	<p>R: 12, assisted; LS clear and equal with crepitus on right</p>
+																	<p>Skin: Pale, diaphoretic</p>
+																	<p>Spo2: 99%/O2</p>
+																	<p>ETCO2: 45 mm Hg</p>
+																	<p>GCS: 8 (E-2, V-2, M-4), PERRLA, sluggish</p>
+																	<p>Glucose: 86 mg/dl (4.8 mmol/l)</p>
+																	<p>Pain: unable to assess</p>
+																	<p>Temp: 96.5°F (35.8°C)</p>
+																</div>
+															</div>
 														</div>
 													</li>
 												</ul>
@@ -1399,6 +1415,106 @@
 			</div>
 		</div>
 		<!-- End modal -->
+		<!-- Begin modal -->
+		<div class="modal fade" id="modalSSUSafety" tabindex="-1" role="dialog" aria-labelledby="modalSSUSafetyLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalSSUSafetyLabel">Scene safety</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Scene is safe</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End modal -->
+		<!-- Begin modal -->
+		<div class="modal fade" id="modalSSUSafety" tabindex="-1" role="dialog" aria-labelledby="modalSSUSafetyLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalSSUSafetyLabel">Scene safety</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Scene is safe</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End modal -->
+		<!-- Begin modal -->
+		<div class="modal fade" id="modalSSUMechanismOfInjury" tabindex="-1" role="dialog" aria-labelledby="modalSSUMechanismOfInjuryLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalSSUMechanismOfInjuryLabel">Mechanism of injury</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Patient experienced a rollover with a riding lawn mower</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End modal -->
+		<!-- Begin modal -->
+		<div class="modal fade" id="modalSSUNumPatients" tabindex="-1" role="dialog" aria-labelledby="modalSSUNumPatientsLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalSSUNumPatientsLabel">Mechanism of injury</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>1 patient</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End modal -->
+		<!-- Begin modal -->
+		<div class="modal fade" id="modalIARGeneralImpression" tabindex="-1" role="dialog" aria-labelledby="modalIARGeneralImpressionLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalIARGeneralImpressionLabel">General Impression</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>You arrive at a suburban yard where you observe a large riding lawn mower on its side at the bottom of an 8-ft (2.5-m) hill. A bystander is holding a towel to the patient’s right lower leg. As you approach the patient, the bystander tells you that he saw the mower tip over while the patient was driving it.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End modal -->
 		<!-- Begin shock intervention DO button modal -->
 		<div class="modal fade" id="modelShockIntervention" tabindex="-1" role="dialog" aria-labelledby="modelShockInterventionLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -1598,12 +1714,18 @@ $('#generalSigns').on('click', function (e) {
 	var callouts = {
 		"customCheckSSU1Type" : "Safety",
 		"customCheckSSU1Info" : "Safe",
+		"customCheckSSU2Type" : "Mechanism of Injury",
+		"customCheckSSU2Info" : "Patient experienced a rollover with a riding lawn mower",
+		"customCheckSSU3Type" : "Number of Patients",
+		"customCheckSSU3Info" : "1",
+		"customCheckIAR1Type" : "General Impression",
+		"customCheckIAR1Info" : "You arrive at a suburban yard where you observe a large riding lawn mower on its side at the bottom of an 8-ft (2.5-m) hill. A bystander is holding a towel to the patient’s right lower leg. As you approach the patient, the bystander tells you that he saw the mower tip over while the patient was driving it.",
 	};
 // Handles callouts
 $(document).on('click', 'a.MDBCallout', function(event) {
 	$currID = $(this).parent().prev().attr('id');  // Gets the ID of the checkbox
 	$currID = $currID.split('SelectedIntervention')[0];  // Accounts for if this is also a selected intervention
-	alert(callouts[$currID + "Type"] + ": " + callouts[$currID + "Info"]);
+	//alert(callouts[$currID + "Type"] + ": " + callouts[$currID + "Info"]);
 	if (!callouts[$currID + 'Exists']) {
 		$('#raterInfoTableGeneral > tbody').prepend('<tr><th scope="row">' + callouts[$currID + "Type"] + '</th><td>' + callouts[$currID + "Info"] + '</td></tr><tr>');
 	}
@@ -1627,7 +1749,6 @@ $(document).ready(function() {
     $("#selectedInterventionsFilter").click(function(){
 		$("label").not(".custom-control-label.MDBSelectedIntervention").toggle();
 		$("button").not(".btn.btn-primary.selectedInterventionException").toggle(); // Hide all do buttons except the ones with selected interventions
-
 				//or (below) could have an option to highlight
 				//$("label").filter(".custom-control-label.MDBSelectedIntervention").css( "background-color", "yellow" );
 				//and this (below) just hides everything that isn't a selected intervention
@@ -1636,14 +1757,18 @@ $(document).ready(function() {
 });
 
 var checkedItemsMaster = 0; // Checked items bitfield
-var critItemsPerformed = BigInt(0x3FFFFFFFFFFFFF); // will change, just temp
+var critItemsPerformed = -1; // will change, just temp
 
 // positionNum: checklist item's place in checklist (starting from 0)
 function toggleChecked(positionNum) {
 	checkedItemsMaster = checkedItemsMaster ^ ( 1 << positionNum ); // xor allows for easy toggling
-	console.log(checkedItemsMaster);
+	console.log(checkedItemsMaster.toString(2)); // Debug
 }
 
+function criticalItemsComplete() {
+	return ( ((~checkedItemsMaster) ^ critItemsPerformed) === 0 );
+}
+//console.log(criticalItemsComplete())
 </script>
 </body>
 </html>
