@@ -307,14 +307,14 @@
 																			<div class="custom-control custom-checkbox">
 																				<input type="checkbox" class="custom-control-input" id="customCheckIARCirculation3">
 																				<label class="custom-control-label MDBSelectedIntervention" for="customCheckIARCirculation3">Assesses for & controls major bleeding if present</label>
-																				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelBleedingIntervention">DO</button>
+																				<button type="button" class="btn btn-primary selectedInterventionException" data-toggle="modal" data-target="#modelBleedingIntervention">DO</button>
 																			</div>
 																		</li>
 																		<li class="list-group-item">
 																			<div class="custom-control custom-checkbox">
 																				<input type="checkbox" class="custom-control-input" id="customCheckIARCirculation4">
 																				<label class="custom-control-label MDBSelectedIntervention" for="customCheckIARCirculation4">Initiates shock management</label>
-																				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelShockIntervention">DO</button>
+																				<button type="button" class="btn btn-primary selectedInterventionException" data-toggle="modal" data-target="#modelShockIntervention">DO</button>
 																			</div>
 																		</li>
 																	</ul>
@@ -333,7 +333,7 @@
 														<div class="custom-control custom-checkbox">
 															<input type="checkbox" class="custom-control-input" id="customCheckIAR5">
 															<label class="custom-control-label MDBSelectedIntervention" for="customCheckIAR5">Assesses for and provides spinal immobilization when indicated</label>
-																<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelSpinalImmobilization">DO</button>
+																<button type="button" class="btn btn-primary selectedInterventionException" data-toggle="modal" data-target="#modelSpinalImmobilization">DO</button>
 														</div>
 													</li>
 												</ul>
@@ -1043,6 +1043,13 @@ $('#generalSigns').on('click', function (e) {
 	var callouts = {
 		"customCheckSSU1Type" : "Safety",
 		"customCheckSSU1Info" : "Safe",
+		"numPatientsType" : "Number of patients",
+		"numPatientsInfo" : "1",
+		"mechOfInjuryType" : "Mechanism of Injury",
+		"mechOfInjuryInfo" : "Patient experienced a rollover with a riding lawn mower",
+		"generalImpressionType" : "General Impression",
+		"generalImpressionInfo" : "General Impression: You arrive at a suburban yard where you observe a large riding lawn mower on its side at the bottom of an 8-ft (2.5-m) hill. A bystander is holding a towel to the patient’s right lower leg. As you approach the patient, the bystander tells you that he saw the mower tip over while the patient was driving it.",
+
 	};
 // Handles callouts
 $(document).on('click', 'a.MDBCallout', function(event) {
