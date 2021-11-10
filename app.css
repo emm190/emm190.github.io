@@ -1,0 +1,107 @@
+  body {
+    background-color: #c7c9cc;
+    color: black;
+    font-family: "Gill Sans", sans-serif;  font-size: 22px; 
+    text-align:center;
+  }
+  .btn-toolbar button {
+    font-family: "Gill Sans", sans-serif;  font-size: 22px; 
+    background-color: #9ea3f0; /* Green background */
+    border: 1px solid #9ea3f0; /* Green border */
+    color: black; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: center; /* Float the buttons side by side */
+  }
+  
+  .btn-toolbar button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .btn-toolbar:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  button { margin: 15px 15px }
+  /* Add a background color on hover */
+  button:hover {
+    background-color: #a9bcf0;
+  }
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .stepDescription {
+    display: none; 
+    width: 700px; height: 350px; margin-top: 5px; margin-left: auto; margin-right: auto;   
+    background: rgba(255,255,255,0.3);
+    padding: 30px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    text-align: left;
+  }
+
+  .benchmarkDescription {
+    display: none; 
+    width: 300px; height: 350px; margin-top: 50px; margin-left: 150px; margin-right: auto;   
+    background: rgba(255,255,255,0.3);
+    padding: 10px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .benchmarkDescriptionLeft {
+    width: 300px; height: 350px; margin-top: 50px; margin-left: 150px;   
+    background: rgba(255,255,255,0.3);
+    padding: 10px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+
+  .benchmarkDescriptionRight {
+    margin-left: 50%; 
+    width: 500px; height: 350px; margin-top: 50px;   
+    background: rgba(255,255,255,0.3);
+    padding: 10px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+
+
+  
+  
