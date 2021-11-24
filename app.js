@@ -2,6 +2,7 @@
 
 function displayDescribe()
 {
+    document.getElementById("slideshowR").style.display = "none";
     document.getElementById("EButton").style.backgroundColor = "#9ea3f0";
     document.getElementById("boxDescription").style.display = "block"; 
     document.getElementById("benchmarkDescription").style.display = "none";
@@ -12,6 +13,7 @@ function displayDescribe()
 
 function displayExplain()
 {
+    document.getElementById("slideshowR").style.display = "none";
     document.getElementById("BButton").style.backgroundColor = "#9ea3f0";
     document.getElementById("boxDescription").style.display = "block";
     document.getElementById("benchmarkDescription").style.display = "none";
@@ -32,7 +34,8 @@ function displayBenchmarks()
     <ul id="metric2" onClick="metric2()">2. <u>Stabilized a potential cervical injury</u></ul><ul id="metric3" onClick="metric3()">3. <u>Provided a definitive airway and supported ventilation</u>
     </ul><ul id="metric4" onClick="metric4()">4. <u>Managed hemorrhagic shock</u></ul>`
     document.getElementById("rightbox").innerHTML = 
-    `Click on a management action to see performance benchmarks for this action:`
+    `Click on a management action to see performance benchmarks for this action:`;
+    document.getElementById("slideshowR").style.display = "none";
 }
 
 function metric1()
@@ -102,6 +105,7 @@ function displayReview()
     document.getElementById("boxDescription").style.display = "none";
     document.getElementById("benchmarkDescription").style.display = "none";
     document.getElementById("test").style.display = "none";
+    document.getElementById("slideshowR").style.display = "block";
 }
 
 function displayIdentify() 
@@ -110,6 +114,7 @@ function displayIdentify()
     document.getElementById("boxDescription").style.display = "none";
     document.getElementById("benchmarkDescription").style.display = "none";
     document.getElementById("test").style.display = "none";
+    document.getElementById("slideshowR").style.display = "none";
 }
 
 function displayExamine() 
@@ -118,6 +123,8 @@ function displayExamine()
     document.getElementById("boxDescription").style.display = "none";
     document.getElementById("benchmarkDescription").style.display = "none";
     document.getElementById("test").style.display = "none";
+    document.getElementById("slideshowR").style.display = "none";
+    
 }
 
 function displayFormailze() 
@@ -126,4 +133,32 @@ function displayFormailze()
     document.getElementById("boxDescription").style.display = "none";
     document.getElementById("benchmarkDescription").style.display = "none";
     document.getElementById("test").style.display = "none";
+    document.getElementById("slideshowR").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
 }
