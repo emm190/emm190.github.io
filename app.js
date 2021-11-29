@@ -1,6 +1,7 @@
 var slideNum = 0; 
 function displayDescribe() {
     document.getElementById("slideshowR").style.display = "none";
+    document.getElementById("slideshowI").style.display = "none";
     document.getElementById("EButton").style.backgroundColor = "#9ea3f0";
     document.getElementById("boxDescription").style.display = "block";
     document.getElementById("benchmarkDescription").style.display = "none";
@@ -11,6 +12,7 @@ function displayDescribe() {
 
 function displayExplain() {
     document.getElementById("slideshowR").style.display = "none";
+    document.getElementById("slideshowI").style.display = "none";
     document.getElementById("BButton").style.backgroundColor = "#9ea3f0";
     document.getElementById("boxDescription").style.display = "block";
     document.getElementById("benchmarkDescription").style.display = "none";
@@ -32,6 +34,8 @@ function displayBenchmarks() {
     document.getElementById("rightbox").innerHTML =
         `Click on a management action to see performance benchmarks for this action:`;
     document.getElementById("slideshowR").style.display = "none";
+    document.getElementById("slideshowI").style.display = "none";
+
 }
 
 function metric1() {
@@ -98,14 +102,18 @@ function displayReview() {
     document.getElementById("benchmarkDescription").style.display = "none";
     document.getElementById("test").style.display = "none";
     document.getElementById("slideshowR").style.display = "block";
+    document.getElementById("slideshowI").style.display = "none";
+
 }
 
 function displayIdentify() {
+    showSpecificSlide(lifeThreatBleed);
     document.getElementById("step").innerHTML = "<b>I</b>dentify what happened: ";
     document.getElementById("boxDescription").style.display = "none";
     document.getElementById("benchmarkDescription").style.display = "none";
     document.getElementById("test").style.display = "none";
     document.getElementById("slideshowR").style.display = "none";
+    document.getElementById("slideshowI").style.display = "block";
 }
 
 function displayExamine() {
