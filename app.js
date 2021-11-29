@@ -101,6 +101,7 @@ function metric4()
 
 function displayReview() 
 { 
+    showSpecificSlide(sceneSizeUp);
     document.getElementById("step").innerHTML = "<b>R</b>eview what was supposed to happen: ";
     document.getElementById("boxDescription").style.display = "none";
     document.getElementById("benchmarkDescription").style.display = "none";
