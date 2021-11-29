@@ -157,6 +157,7 @@ function openNav() {
   }
 
 function showSlides(n) {
+    
   var i;
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
@@ -170,11 +171,36 @@ function showSlides(n) {
       dots[i].className = dots[i].className.replace(" active", "");
     }
   slides[slideIndex-1].style.display = "block";
+  n = slides[slideIndex-1];
+  var prevButton = document.getElementsByClassName("prev");
+    var nextButton = document.getElementsByClassName("next");
+    prevButton[0].style.display = "initial";
+    nextButton[0].style.display = "initial";
+    if(n.id=='sceneSizeUp')
+    {
+        prevButton[0].style.display = "none";
+    }
+    if(n.id=='ongoingManagement')
+    {
+        nextButton[0].style.display = "none";
+    }
   //dots[slideIndex-1].className += " active";
 }
 
 function showSpecificSlide(n) {
     console.log(n.id);
+    var prevButton = document.getElementsByClassName("prev");
+    var nextButton = document.getElementsByClassName("next");
+    prevButton[0].style.display = "initial";
+    nextButton[0].style.display = "initial";
+    if(n.id=='sceneSizeUp')
+    {
+        prevButton[0].style.display = "none";
+    }
+    if(n.id=='ongoingManagement')
+    {
+        nextButton[0].style.display = "none";
+    }
     console.log(document.getElementById(n));
     document.getElementById(n.id).style.display = "block";
 
