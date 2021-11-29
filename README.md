@@ -1,5 +1,7 @@
-# SelfDebrief
+# Self Debrief
 
 Completed: D, E, B, R 
 
-Working on: I, E, F
+Currently working on: I 
+
+Still need implemented: E, F
