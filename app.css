@@ -104,6 +104,7 @@
 
 /* Slideshow container */
 .slideshow-container {
+  overflow: scroll;
   display: none; 
   background: #f1f1f1f1;
   width: 800px;

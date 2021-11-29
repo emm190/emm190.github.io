@@ -54,39 +54,39 @@
     <div id="slideshowR" class="slideshow-container">
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#">Scene Size-Up</a>
-            <a href="#">Primary Survey</a>
-            <a href="#">Secondary Survey</a>
-            <a href="#">Transfer and Transport</a>
-            <a href="#">Ongoing Assessment And Management</a>
-            <a href="#">All phases</a>
+            <a onclick="showSpecificSlide(sceneSizeUp)">Scene Size-Up</a>
+            <a onclick="showSpecificSlide(primarySurvey)">Primary Survey</a>
+            <a onclick="showSpecificSlide(secondarySurvey)">Secondary Survey</a>
+            <a onclick="showSpecificSlide(transferAndTransport)" >Transfer and Transport</a>
+            <a onclick="showSpecificSlide(ongoingManagement)" >Ongoing Assessment And Management</a>
+            <a onclick="showAllSlides()">All phases</a>
           </div>
           
           <div id="hamburger" class="hamburger">
           <span id="hamburger" class="hamburger" style="font-size:30px;cursor:pointer;text-align:left !important;align-items:left !important;" onclick="openNav()">&#9776;</span>
-        </div>
+            </div>
           <!-- Full-width slides/quotes -->
-        <div class="mySlides">
+        <div id="sceneSizeUp" class="mySlides">
             <p class="author">SCENE SIZE-UP</p>
             <p> What we intended to happen was that you and your partner would arrive on scene and find an adult male seriously injured in a lawn mower rollover accident. A bystander is holding a towel to the man’s right lower leg, but this has not “stopped the bleed”.</p>
             </div>
 
-        <div class="mySlides">
+        <div id="primarySurvey" class="mySlides">
         <p class="author">PRIMARY SURVEY</p>
           <p>You immediately direct your partner to provide manual c-spine stabilization while you apply a tourniquet to the patient’s right lower leg. Having confirmed that the tourniquet effectively managed this life-threating hemorrhage, you assess the patient’s level of consciousness, airway, breathing, and circulation. Based on this initial assessment, you provide BVM ventilation with supplemental oxygen. Since this treatment fails to raise the patient’s oxygen saturation to a 95% min., medical command directs you to provide a definitive airway, with continued oxygen therap. You perform sedated intubation, which successfully manages the patient’s airway/breathing, and cover the patient with blankets. Your goal at this point is to get this critical patient to a Level 1 or 2 trauma center as quickly and safely as possible.</p>
         </div>
       
-        <div class="mySlides">
+        <div id="secondarySurvey" class="mySlides">
         <p class="author">SECONDARY SURVEY</p>
         <p>Having identified that this patient is in shock and, generally, in critical condition, you direct your partner to take vitals while you perform a rapid head-to-toe assessment. Your secondary survey reveals non-serious bleeding, bruises, lacerations, etc. on the patient’s head, abdomen, chest, and extremities. After applying a cervical collar, you and your partner log roll the patient onto a long board. You retrieve and pack the patient’s amputated foot on ice, while your partner fully immobilizes him.</p>
         </div>
 
-        <div class="mySlides">
+        <div id="transferAndTransport" class="mySlides">
             <p class="author">TRANSFER AND TRANSPORT</p>
               <p>You and your partner transfer the patient onto a stretcher and into the ambulance. Your partner turns up the heat and drives to the nearest Level 2 trauma center, 25 min. away.</p>
         </div>
 
-        <div class="mySlides">
+        <div id="ongoingManagement" class="mySlides">
             <p class="author">ONGOING ASSESSMENT AND MANAGEMENT</p>
             <p>You contact the receiving facility, alerting them to the patient’s condition and your ETA. While en route, you establish two large bore IV’s; reassess the patient frequently; confirm that all interventions are still working properly, modifying as necessary; and dress as many wounds as time allows.</p>
         </div>
