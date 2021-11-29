@@ -1,3 +1,4 @@
+var slideNum = 0; 
 function displayDescribe() {
     document.getElementById("slideshowR").style.display = "none";
     document.getElementById("EButton").style.backgroundColor = "#9ea3f0";
@@ -127,12 +128,20 @@ function displayFormailze() {
 var slideIndex = 1;
 showSlides(slideIndex);
 
+function displaySlides(n)
+{
+    console.log("display slide" + (slideNum+n));
+    slideNum = slideNum+n;
+    var slides=[sceneSizeUp, primarySurvey, secondarySurvey, transferAndTransport, ongoingManagement];
+    showSpecificSlide(slides[slideNum]);
+}
+
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
 
 function currentSlide(n) {
-    showSlides(slideIndex = n);
+    return currSlide;
 }
 
 function openNav() {
@@ -144,7 +153,6 @@ function closeNav() {
 }
 
 function showSlides(n) {
-
     var i;
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
@@ -177,6 +185,7 @@ function showSlides(n) {
 }
 
 function showSpecificSlide(n) {
+    //slideNum=0, 1, 2, or 3
     console.log(n.id);
     var prevButton = document.getElementsByClassName("prev");
     var nextButton = document.getElementsByClassName("next");
@@ -184,9 +193,25 @@ function showSpecificSlide(n) {
     nextButton[0].style.display = "initial";
     if (n.id == 'sceneSizeUp') {
         prevButton[0].style.display = "none";
+        slideNum=0;
+        console.log(slideNum); 
+    }
+    if (n.id == 'primarySurvey') {
+        slideNum=1;
+        console.log(slideNum); 
+    }
+    if (n.id == 'secondarySurvey') {
+        slideNum=2;
+        console.log(slideNum); 
+    }
+    if (n.id == 'transferAndTransport') {
+        slideNum=3;
+        console.log(slideNum); 
     }
     if (n.id == 'ongoingManagement') {
         nextButton[0].style.display = "none";
+        slideNum=4;
+        console.log(slideNum); 
     }
     console.log(document.getElementById(n));
     document.getElementById(n.id).style.display = "block";
@@ -206,6 +231,10 @@ function showSpecificSlide(n) {
 }
 
 function showAllSlides() {
+    var prevButton = document.getElementsByClassName("prev");
+    var nextButton = document.getElementsByClassName("next");
+    prevButton[0].style.display = "none";
+    nextButton[0].style.display = "none";
     var slides = document.getElementsByClassName("mySlides");
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "block";
