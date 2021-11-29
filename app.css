@@ -41,7 +41,7 @@
   .stepDescription {
     display: none; 
     width: 700px; height: 350px; margin-top: 5px; margin-left: auto; margin-right: auto;   
-    background: rgba(255,255,255,0.3);
+    background: white;
     padding: 30px;
     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
     -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
@@ -57,7 +57,7 @@
   .benchmarkDescription {
     display: none; 
     width: 300px; height: 350px; margin-top: 50px; margin-left: 150px; margin-right: auto;   
-    background: rgba(255,255,255,0.3);
+    background: white;
     padding: 10px;
     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
     -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
@@ -106,11 +106,19 @@
 .slideshow-container {
   overflow: scroll;
   display: none; 
-  background: #f1f1f1f1;
+  background: white;
   width: 800px;
   height: 500px; 
   margin-left: 22%; 
   margin-right: 30%;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
 }
 
 /* Slides */
