@@ -276,7 +276,7 @@ q {font-style: italic;}
 .popup .popuptext {
   visibility: hidden;
   width: 300px;
-  background-color: rgb(160, 158, 158);
+  background-color: #9ea3f0;
   color: #fff;
   text-align: center;
   border-radius: 6px;
@@ -307,7 +307,7 @@ q {font-style: italic;}
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: rgb(160, 158, 158) transparent transparent transparent;
+  border-color:#9ea3f0 transparent transparent transparent;
 }
 
 /* Toggle this class - hide and show the popup */
