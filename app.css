@@ -4,6 +4,23 @@
     font-family: "Gill Sans", sans-serif;  font-size: 22px; 
     text-align:center;
   }
+
+  table {
+    margin-top:0px;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+  }
+  th {
+    background-color: #979dee;
+    color: white;
+  }
+  th,
+  td {
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+  }
+
   .btn-toolbar button {
     font-family: "Gill Sans", sans-serif;  font-size: 22px; 
     background-color: #9ea3f0; /* Green background */
@@ -237,3 +254,9 @@ q {font-style: italic;}
   align-items: left !important; 
 }
 
+.bottomright {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
+}
