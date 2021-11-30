@@ -249,8 +249,8 @@ function showAllSlides() {
     }
 }
 
-function myFunction() {
-    console.log("In");
-    var popup = document.getElementById("myPopup");
+function myFunction(n) {
+    console.log(n);
+    var popup = document.getElementById(n);
     popup.classList.toggle("show");
   }

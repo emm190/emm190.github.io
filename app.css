@@ -262,6 +262,7 @@ q {font-style: italic;}
 }
 
 .popup {
+  
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -275,17 +276,26 @@ q {font-style: italic;}
 .popup .popuptext {
   visibility: hidden;
   width: 300px;
-  background-color: #555;
+  background-color: rgb(160, 158, 158);
   color: #fff;
   text-align: center;
   border-radius: 6px;
   font-size: 18px;
   padding: 8px 0;
+  margin: 5px;
   position: absolute;
   z-index: 1;
   bottom: 125%;
   left: 30%;
   margin-left: -80px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
 }
 
 /* Popup arrow */
@@ -297,7 +307,7 @@ q {font-style: italic;}
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: rgb(160, 158, 158) transparent transparent transparent;
 }
 
 /* Toggle this class - hide and show the popup */
