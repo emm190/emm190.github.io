@@ -248,3 +248,9 @@ function showAllSlides() {
         slides[i].style.display = "block";
     }
 }
+
+function myFunction() {
+    console.log("In");
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }

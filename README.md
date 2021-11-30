@@ -1,7 +1,7 @@
 # Self Debrief
 
-Completed: D, E, B, R 
+Completed: D, E, B 
 
-Currently working on: I 
+Currently working on: Pop ups for R 
 
-Still need implemented: E, F
+Still need implemented: I, E, F
