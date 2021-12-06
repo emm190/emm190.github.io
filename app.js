@@ -153,7 +153,7 @@ function currentSlide(n) {
 }
 
 function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style.width = "140px";
 }
 
 function closeNav() {
@@ -254,3 +254,7 @@ function myFunction(n) {
     var popup = document.getElementById(n);
     popup.classList.toggle("show");
   }
+
+function showFeedback(){
+    console.log("Showing feedback");
+}
