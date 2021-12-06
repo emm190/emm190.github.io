@@ -1,4 +1,5 @@
 var slideNum = 0; 
+var checkNum = 0; 
 function displayDescribe() {
     document.getElementById("slideshowR").style.display = "none";
     document.getElementById("slideshowI").style.display = "none";
@@ -257,5 +258,14 @@ function myFunction(n) {
 
 function showFeedback(){
     document.getElementById("lifeThreatBleed").style.display = "none";
+    document.getElementById("showFeedBackForBleed").style.display = "block";
     console.log("Showing feedback");
+}
+
+function checkMarked(){ 
+    checkNum++;
+    if(checkNum>4) {
+        console.log("Okay show button");
+        document.getElementById("nextbuttonbleed").style.display = "block";
+    }
 }

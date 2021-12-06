@@ -115,67 +115,141 @@
                 <tr>
                   <td>Identify life-threatening bleeding during your primary survey</td>
                   <td style="margin: 5px;" class="checkbox">
-                    <input type="checkbox">
+                    <input onClick="checkMarked()" type="checkbox">
                   </td>
                   <td style="margin: 5px;" class="checkbox">
-                    <input type="checkbox">
+                    <input onClick="checkMarked()" type="checkbox">
                   </td>
                   <td style="margin: 5px;" class="checkbox">
-                    <input type="checkbox">
+                    <input onClick="checkMarked()" type="checkbox">
                   </td>
                 </tr>
                 <tr>
                     <td>Apply a tourniquet as far proximally as possible</td>
                     <td class="checkbox">
-                      <input type="checkbox">
+                      <input onClick="checkMarked()" type="checkbox">
                     </td>
                     <td class="checkbox">
-                      <input type="checkbox">
+                      <input onClick="checkMarked()" type="checkbox">
                     </td>
                     <td class="checkbox">
-                      <input type="checkbox">
+                      <input onClick="checkMarked()" type="checkbox">
                     </td>
                 </tr>
                 <tr>
                     <td>Apply a tourniquet during the primary survey</td>
                     <td class="checkbox">
-                      <input type="checkbox">
+                      <input onClick="checkMarked()" type="checkbox">
                     </td>
                     <td class="checkbox">
-                      <input type="checkbox">
+                      <input onClick="checkMarked()" type="checkbox">
                     </td>
                     <td class="checkbox">
-                      <input type="checkbox">
+                      <input onClick="checkMarked()" type="checkbox">
                     </td>
                 </tr>
                 <tr>
                     <td>Confirm that bleeding has stopped</td>
                     <td class="checkbox">
-                      <input type="checkbox">
+                      <input onClick="checkMarked()" type="checkbox">
                     </td>
                     <td class="checkbox">
-                      <input type="checkbox">
+                      <input onClick="checkMarked()" type="checkbox">
                     </td>
                     <td class="checkbox">
-                      <input type="checkbox">
+                      <input onClick="checkMarked()" type="checkbox">
                     </td>
                 </tr>
                 <tr>
                     <td>Confirm that pulses are absent</td>
                     <td class="checkbox">
-                      <input type="checkbox">
+                      <input onClick="checkMarked()" type="checkbox">
                     </td>
                     <td class="checkbox">
-                      <input type="checkbox">
+                      <input onClick="checkMarked()" type="checkbox">
                     </td>
                     <td class="checkbox">
-                      <input type="checkbox">
+                      <input onClick="checkMarked()" type="checkbox">
                     </td>
                 </tr>
               </table> 
-              <div onclick="showFeedback()"style="text-align: right;" class=”bottomright>Next ></div>
+              <div id="nextbuttonbleed" onclick="showFeedback()"style="text-align: right; display: none" class=”bottomright>Next ></div>
         </div>
-        <!-- Next/prev buttons -->
+        
+
+        <div id="showFeedBackForBleed" class="mySlides">
+          <p class="author"><b>Feedback:</b></p> 
+            <table style="width:99%;">
+              <tr>
+                <th>Action</th>
+                <th >Yes</th>
+                <th >No</th>
+                <th >Unsure</th>
+              </tr>
+              <br>
+              <tr>
+                <td>Identify life-threatening bleeding during your primary survey</td>
+                <td style="margin: 5px;" class="checkbox">
+                  <input type="checkbox">
+                </td>
+                <td style="margin: 5px;" class="checkbox">
+                  <input type="checkbox">
+                </td>
+                <td style="margin: 5px;" class="checkbox">
+                  <input type="checkbox">
+                </td>
+              </tr>
+              <tr>
+                  <td>Apply a tourniquet as far proximally as possible</td>
+                  <td class="checkbox">
+                    <input type="checkbox">
+                  </td>
+                  <td class="checkbox">
+                    <input type="checkbox">
+                  </td>
+                  <td class="checkbox">
+                    <input type="checkbox">
+                  </td>
+              </tr>
+              <tr>
+                  <td>Apply a tourniquet during the primary survey</td>
+                  <td class="checkbox">
+                    <input type="checkbox">
+                  </td>
+                  <td class="checkbox">
+                    <input type="checkbox">
+                  </td>
+                  <td class="checkbox">
+                    <input type="checkbox">
+                  </td>
+              </tr>
+              <tr>
+                  <td>Confirm that bleeding has stopped</td>
+                  <td class="checkbox">
+                    <input type="checkbox">
+                  </td>
+                  <td class="checkbox">
+                    <input type="checkbox">
+                  </td>
+                  <td class="checkbox">
+                    <input type="checkbox">
+                  </td>
+              </tr>
+              <tr>
+                  <td>Confirm that pulses are absent</td>
+                  <td class="checkbox">
+                    <input type="checkbox">
+                  </td>
+                  <td class="checkbox">
+                    <input type="checkbox">
+                  </td>
+                  <td class="checkbox">
+                    <input id="lastCheck" onClick="checkMarked()" type="checkbox">
+                  </td>
+              </tr>
+            </table> 
+            <div id="nextButton" onclick="showFeedback()" style="text-align: right;" class=”bottomright>Next ></div>
+      </div>
         
       </div>
     </div>
