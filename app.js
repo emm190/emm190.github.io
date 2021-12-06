@@ -256,5 +256,6 @@ function myFunction(n) {
   }
 
 function showFeedback(){
+    document.getElementById("lifeThreatBleed").style.display = "none";
     console.log("Showing feedback");
 }
