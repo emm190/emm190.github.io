@@ -178,7 +178,7 @@
         
 
         <div id="showFeedBackForBleed" class="mySlides">
-          <p class="author"><b>Feedback:</b></p> 
+          <p class="author"><b>Below the table is feedback about your responses:</b></p> 
             <table style="width:99%;">
               <tr>
                 <th>Action</th>
@@ -188,8 +188,7 @@
               </tr>
               <br>
               <tr>
-                <td>Identify life-threatening bleeding during your  survey<i style="color: red"> *The following should alert you to possible life-threatening blood loss early on in your assessment 1.Mechanism of injury, a lawn-mower accident, provided by dispatch (scene size up)
-                  2. A bystander holding a blood-soaked towel to the patient’s right leg (primary survey), which was ultimately found to be related to a partial amputation</i></td>
+                <td>Identify life-threatening bleeding during your  survey</td>
                 <td style="margin: 5px;" class="checkbox">
                   <input class="feedbackcheck" type="checkbox">
                 </td>
@@ -249,7 +248,12 @@
                   </td>
               </tr>
             </table> 
-            <div id="nextButton" onclick="showFeedback()" style="text-align: right;" class=”bottomright>Next ></div>
+            <div id="feedbackList">
+              <p style="color:red">Feedback:</p>
+              <ul id="feedbacklist" style="color:red">
+               
+              </ul>
+            </div>
       </div>
         
       </div>

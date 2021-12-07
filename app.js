@@ -267,18 +267,34 @@ function showFeedback(){
         }
         feedbackCheckbox[i].disabled=true;
     }
+    showFeedbackList(feedbackCheckbox); 
     document.getElementById("lifeThreatBleed").style.display = "none";
     document.getElementById("showFeedBackForBleed").style.display = "block";
 }
 
-function checkMarked(){ 
-    /*var checkbox = document.getElementsByClassName("initialcheck");
-    var checkArray = []; 
-    for(var i = 0; i<checkbox.length; i++)
-    {
-        checkArray[i]=checkbox[i].checked
+function showFeedbackList(n){
+    var yesList = [0, 3, 6, 9, 12]; 
+    var noList = [1, 4, 7, 10, 13]; 
+    var unsureList = [2, 5, 8, 11, 14];
+    var rowCount = 0;
+    //if all are checked display correct answer feedback 
+    if(n[0].checked && n[3].checked && n[6].checked && n[9].checked && n[12].checked) {
+        document.getElementById("feedbacklist").innerHTML = '<li>During the primary survey, you correctly identified that this patient had a life-threatening partial amputation and placed a tourniquet on the proximal right leg to stop the bleeding. Good job.</li>'
     }
-    console.log(checkArray);*/
+    else { 
+        for(var i = 0; i<n.length; i++)
+        {
+            console.log("i: " + i + ", checked: " + n[i].checked); 
+            rowCount++; 
+            if(rowCount==2)
+                rowCount=0; 
+        }
+        console.log("Display list"); 
+    }
+}
+
+
+function checkMarked(){ 
     checkNum++;
     if(checkNum>4) {
         console.log("Okay show button");
