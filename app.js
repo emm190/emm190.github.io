@@ -277,6 +277,8 @@ function showFeedbackList(n){
     var noList = [1, 4, 7, 10, 13]; 
     var unsureList = [2, 5, 8, 11, 14];
     var rowCount = 0;
+    var listHeaders = document.getElementsByClassName("actionHeader"); 
+    console.log(listHeaders);
     //if all are checked display correct answer feedback 
     if(n[0].checked && n[3].checked && n[6].checked && n[9].checked && n[12].checked) {
         document.getElementById("positiveFeedBackList").innerHTML = '<li>During the primary survey, you correctly identified that this patient had a life-threatening partial amputation and placed a tourniquet on the proximal right leg to stop the bleeding.</li>'
