@@ -267,6 +267,8 @@ function showFeedback(){
         }
         feedbackCheckbox[i].disabled=true;
     }
+    document.getElementById("lifeThreatBleed").style.display = "none";
+    document.getElementById("showFeedBackForBleed").style.display = "block";
 }
 
 function checkMarked(){ 
