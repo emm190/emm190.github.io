@@ -257,12 +257,26 @@ function myFunction(n) {
   }
 
 function showFeedback(){
-    document.getElementById("lifeThreatBleed").style.display = "none";
-    document.getElementById("showFeedBackForBleed").style.display = "block";
-    console.log("Showing feedback");
+    var checkbox = document.getElementsByClassName("initialcheck");
+    var feedbackCheckbox = document.getElementsByClassName("feedbackcheck");
+    var checkArray = []; 
+    for(var i = 0; i<checkbox.length; i++)
+    {
+        if(checkbox[i].checked==true) {
+            feedbackCheckbox[i].checked=true; 
+        }
+        feedbackCheckbox[i].disabled=true;
+    }
 }
 
 function checkMarked(){ 
+    /*var checkbox = document.getElementsByClassName("initialcheck");
+    var checkArray = []; 
+    for(var i = 0; i<checkbox.length; i++)
+    {
+        checkArray[i]=checkbox[i].checked
+    }
+    console.log(checkArray);*/
     checkNum++;
     if(checkNum>4) {
         console.log("Okay show button");
