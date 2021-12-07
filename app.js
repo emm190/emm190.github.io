@@ -278,7 +278,13 @@ function showFeedbackList(n){
     var unsureList = [2, 5, 8, 11, 14];
     var rowCount = 0;
     var listHeaders = document.getElementsByClassName("actionHeader"); 
-    console.log(listHeaders);
+    var listHeaderDescription = []; 
+    for(var i = 0; i<listHeaders.length; i++)
+    {
+        listHeaderDescription[i]=listHeaders[i].innerHTML; 
+    }
+    console.log(listHeaderDescription);
+    var indexDesc = 0;
     //if all are checked display correct answer feedback 
     if(n[0].checked && n[3].checked && n[6].checked && n[9].checked && n[12].checked) {
         document.getElementById("positiveFeedBackList").innerHTML = '<li>During the primary survey, you correctly identified that this patient had a life-threatening partial amputation and placed a tourniquet on the proximal right leg to stop the bleeding.</li>'
@@ -288,9 +294,36 @@ function showFeedbackList(n){
         for(var i = 0; i<n.length; i++)
         {
             console.log("i: " + i + ", checked: " + n[i].checked); 
+            if(n[i].checked==true && noList.includes(i))
+            {
+                if (i-3<=-1) //0,1,2
+                    indexDesc=0; 
+                else if (i-3>=0 && i-3<=2) //3,4,5
+                    indexDesc=1; 
+                else if (i-3>=3 && i-3<=5) //6,7,8
+                    indexDesc=2; 
+                else if (i-3>=6 && i-3<=8)//9,10,11
+                    indexDesc=3;
+                else if (i-3>=9 && i-3<=11)//12,13,14
+                    indexDesc=4; 
+                document.getElementById("negativeFeedBackList").innerHTML =  document.getElementById("negativeFeedBackList").innerHTML+'<li><u>'+listHeaderDescription[indexDesc]+'</u>: '+negativeFeedback(indexDesc)+'</li>'
+            }
+            if(n[i].checked==true && yesList.includes(i))
+            {
+                if (i-3<=-1) //0,1,2
+                    indexDesc=0; 
+                else if (i-3>=0 && i-3<=2) //3,4,5
+                    indexDesc=1; 
+                else if (i-3>=3 && i-3<=5) //6,7,8
+                    indexDesc=2; 
+                else if (i-3>=6 && i-3<=8)//9,10,11
+                    indexDesc=3;
+                else if (i-3>=9 && i-3<=11)//12,13,14
+                    indexDesc=4; 
+                document.getElementById("positiveFeedBackList").innerHTML =  document.getElementById("positiveFeedBackList").innerHTML+'<li><u>'+listHeaderDescription[indexDesc]+'</u></li>'
+            }
             rowCount++; 
-            if(rowCount==2)
-                rowCount=0; 
+            
         }
         console.log("Display list"); 
     }
@@ -303,4 +336,16 @@ function checkMarked(){
         console.log("Okay show button");
         document.getElementById("nextbuttonbleed").style.display = "block";
     }
+}
+
+function negativeFeedback(n){ 
+    var negativeFeedback = 
+    [
+        `The following should alert you to possible life-threatening blood loss early on in your assessment:<ul><li>Mechanism of injury, a lawn-mower accident, provided by dispatch (scene size up)</li> <li>A bystander holding a blood-soaked towel to the patient’s right leg (primary survey), which was ultimately found to be related to a partial amputation</li></ul>`,
+        `The patient had a partial amputation and was losing a large amount of blood. This is a threat to life and should be acted on during the primary survey. You could instruct a colleague to apply the tourniquet while you continue on with your primary survey.`,
+        `The correct placement of a tourniquet is as far proximal as possible. If you simply applied direct pressure, this would not have adequately stopped the bleeding so you would need to escalate care.`,
+        `After placement of a tourniquet, you must confirm that the bleeding as stopped. If bleeding has not stopped, you would want to apply a second tourniquet.`, 
+        `After placement of a tourniquet, you must confirm that pulses are absent. If pulses are still palpable, you would want to apply a second tourniquet.` 
+    ]
+    return negativeFeedback[n]; 
 }
