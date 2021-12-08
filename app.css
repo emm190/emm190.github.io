@@ -340,3 +340,24 @@ q {font-style: italic;}
   from {opacity: 0;}
   to {opacity:1 ;}
 }
+
+.nextRound {
+  background-color: #979dee;
+  color: white;
+  margin-bottom: 15px; 
+  margin-left:680px;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+a {
+  text-decoration: none;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
