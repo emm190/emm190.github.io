@@ -365,17 +365,26 @@ function feedbackForm(n){
 
 function showFeedBackForm() {
     document.getElementById("feedbackForm").style.display = "block";
-    console.log("BeingCalled");
     document.getElementById("slideshowI").style.display = "none";
+    var checkbox = document.getElementsByClassName("initialcheck");
+    var feedbackCheckbox = document.getElementsByClassName("feedbackcheck");
+    var noList = [1, 4, 7, 10, 13]; 
     var listHeaders = document.getElementsByClassName("actionHeader"); 
     var listHeaderDescription = []; 
     for(var i = 0; i<listHeaders.length; i++)
     {
         listHeaderDescription[i]=listHeaders[i].innerHTML; 
     }
+    for(var i = 0; i<checkbox.length; i++)
+    {
+        if(checkbox[i].checked==true && noList.includes(i)) {
+            document.getElementById("feedbackFormList").innerHTML =  document.getElementById("feedbackFormList").innerHTML+
+            `<form>
+            <label for="fname">You did not <i><b>`+listHeaderDescription[noList.indexOf(i)].toLowerCase()+`</b></i>. What did you do instead? What do you think led to this?</label><br>
+            <input type="text" id="fname" name="fname" placeholder="Type answer here..."><br>`
+        }
+    }
+    
     //if the n's display is  
-    document.getElementById("feedbackFormList").innerHTML =  document.getElementById("feedbackFormList").innerHTML+
-    `<form>
-     <label for="fname">You did not <i>`+listHeaderDescription[0].toLowerCase()+`</i>. What did you do instead? What do you think led to this?</label><br>
-    <input type="text" id="fname" name="fname" placeholder="Type answer here..."><br>`
+    
 }
