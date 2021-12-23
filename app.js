@@ -115,6 +115,7 @@ function displayIdentify() {
     document.getElementById("test").style.display = "none";
     document.getElementById("slideshowR").style.display = "none";
     document.getElementById("slideshowI").style.display = "block";
+    document.getElementById("feedbackForm").style.display = "none";
 }
 
 function displayExamine() {
@@ -348,4 +349,33 @@ function negativeFeedback(n){
         `After placement of a tourniquet, you must confirm that pulses are absent. If pulses are still palpable, you would want to apply a second tourniquet.` 
     ]
     return negativeFeedback[n]; 
+}
+
+function feedbackForm(n){ 
+    var feedbackForm = 
+    [
+        `The following should alert you to possible life-threatening blood loss early on in your assessment:<ul><li>Mechanism of injury, a lawn-mower accident, provided by dispatch (scene size up)</li> <li>A bystander holding a blood-soaked towel to the patient’s right leg (primary survey), which was ultimately found to be related to a partial amputation</li></ul>`,
+        `The patient had a partial amputation and was losing a large amount of blood. This is a threat to life and should be acted on during the primary survey. You could instruct a colleague to apply the tourniquet while you continue on with your primary survey.`,
+        `The correct placement of a tourniquet is as far proximal as possible. If you simply applied direct pressure, this would not have adequately stopped the bleeding so you would need to escalate care.`,
+        `After placement of a tourniquet, you must confirm that the bleeding as stopped. If bleeding has not stopped, you would want to apply a second tourniquet.`, 
+        `After placement of a tourniquet, you must confirm that pulses are absent. If pulses are still palpable, you would want to apply a second tourniquet.` 
+    ]
+    return feedbackForm[n]; 
+}
+
+function showFeedBackForm() {
+    document.getElementById("feedbackForm").style.display = "block";
+    console.log("BeingCalled");
+    document.getElementById("slideshowI").style.display = "none";
+    var listHeaders = document.getElementsByClassName("actionHeader"); 
+    var listHeaderDescription = []; 
+    for(var i = 0; i<listHeaders.length; i++)
+    {
+        listHeaderDescription[i]=listHeaders[i].innerHTML; 
+    }
+    //if the n's display is  
+    document.getElementById("feedbackFormList").innerHTML =  document.getElementById("feedbackFormList").innerHTML+
+    `<form>
+     <label for="fname">You did not <i>`+listHeaderDescription[0].toLowerCase()+`</i>. What did you do instead? What do you think led to this?</label><br>
+    <input type="text" id="fname" name="fname" placeholder="Type answer here..."><br>`
 }
