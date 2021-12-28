@@ -396,22 +396,4 @@ function showFeedBackForm() {
 
 function showFormalizeForm() {
     document.getElementById("feedbackForm").style.display = "none";
-    var checkbox = document.getElementsByClassName("initialcheck");
-    var feedbackCheckbox = document.getElementsByClassName("feedbackcheck");
-    var noList = [1, 4, 7, 10, 13]; 
-    var listHeaders = document.getElementsByClassName("actionHeader"); 
-    var listHeaderDescription = []; 
-    for(var i = 0; i<listHeaders.length; i++)
-    {
-        listHeaderDescription[i]=listHeaders[i].innerHTML; 
-    }
-    for(var i = 0; i<checkbox.length; i++)
-    {
-        if(checkbox[i].checked==true && noList.includes(i)) {
-            document.getElementById("formalizeFormList").innerHTML =  document.getElementById("formalizeFormList").innerHTML+
-            `<form>
-            <label for="fname">What is your key take-home point from the <i>`+listHeaderDescription[noList.indexOf(i)].toLowerCase()+`</i> step. What did you do instead? What is something you want to continue working on or do differently in the future?</label><br>
-            <input type="text" id="fname" name="fname" placeholder="Type answer here..."><br>`
-        }
-    }
 }
