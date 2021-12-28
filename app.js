@@ -8,6 +8,7 @@ function displayDescribe() {
     document.getElementById("benchmarkDescription").style.display = "none";
     document.getElementById("test").style.display = "none";
     document.getElementById("step").innerHTML = "<b>D</b>efine rules:";
+    document.getElementById("slideshowF").style.display = "none";
     document.getElementById("boxDescription").innerHTML = "The purpose of this debrief is to help you reflect on the scenario you have just completed in order to help you improve your skills as a paramedic. This debrief will recount the actions you performed, as well as the actions indicated based on the case scenario, and will help you explore areas of discordance. The contents of this debrief are designed to identify areas for improvement and are not designed to assess your abilities as a paramedic.";
 }
 
@@ -19,6 +20,7 @@ function displayExplain() {
     document.getElementById("benchmarkDescription").style.display = "none";
     document.getElementById("test").style.display = "none";
     document.getElementById("step").innerHTML = "<b>E</b>xplain the learning objectives:";
+    document.getElementById("slideshowF").style.display = "none";
     document.getElementById("boxDescription").innerHTML =
         "This scenario was designed to give you practice with identifying and managing <ul>1. A patient with life-threatening bleeding</ul> <ul>2. A patient at risk for a cervical injury</ul> <ul>3. A patient who requires a definitive airway and ventilation support</ul> <ul>4. A patient with hemorrhagic shock</ul>";
 }
@@ -36,6 +38,7 @@ function displayBenchmarks() {
         `Click on a management action to see performance benchmarks for this action:`;
     document.getElementById("slideshowR").style.display = "none";
     document.getElementById("slideshowI").style.display = "none";
+    document.getElementById("slideshowF").style.display = "none";
 
 }
 
@@ -104,18 +107,20 @@ function displayReview() {
     document.getElementById("test").style.display = "none";
     document.getElementById("slideshowR").style.display = "block";
     document.getElementById("slideshowI").style.display = "none";
+    document.getElementById("slideshowF").style.display = "none";
 
 }
 
 function displayIdentify() {
     showSpecificSlide(lifeThreatBleed);
-    document.getElementById("step").innerHTML = "<b>I</b>dentify what happened: ";
+    document.getElementById("step").innerHTML = "<b>I</b>dentify what happened & <b>E</b>xamine why: ";
     document.getElementById("boxDescription").style.display = "none";
     document.getElementById("benchmarkDescription").style.display = "none";
     document.getElementById("test").style.display = "none";
     document.getElementById("slideshowR").style.display = "none";
     document.getElementById("slideshowI").style.display = "block";
     document.getElementById("feedbackForm").style.display = "none";
+    document.getElementById("slideshowF").style.display = "none";
 }
 
 function displayExamine() {
@@ -124,6 +129,7 @@ function displayExamine() {
     document.getElementById("benchmarkDescription").style.display = "none";
     document.getElementById("test").style.display = "none";
     document.getElementById("slideshowR").style.display = "none";
+    document.getElementById("slideshowF").style.display = "none";
 
 }
 
@@ -133,6 +139,8 @@ function displayFormailze() {
     document.getElementById("benchmarkDescription").style.display = "none";
     document.getElementById("test").style.display = "none";
     document.getElementById("slideshowR").style.display = "none";
+    document.getElementById("slideshowF").style.display = "block";
+    showFormalizeForm(); 
 }
 
 var slideIndex = 1;
@@ -380,11 +388,30 @@ function showFeedBackForm() {
         if(checkbox[i].checked==true && noList.includes(i)) {
             document.getElementById("feedbackFormList").innerHTML =  document.getElementById("feedbackFormList").innerHTML+
             `<form>
-            <label for="fname">You did not <i><b>`+listHeaderDescription[noList.indexOf(i)].toLowerCase()+`</b></i>. What did you do instead? What do you think led to this?</label><br>
+            <label for="fname">You did not <i>`+listHeaderDescription[noList.indexOf(i)].toLowerCase()+`</i>. What did you do instead? What do you think led to this?</label><br>
             <input type="text" id="fname" name="fname" placeholder="Type answer here..."><br>`
         }
     }
-    
-    //if the n's display is  
-    
+}
+
+function showFormalizeForm() {
+    document.getElementById("feedbackForm").style.display = "none";
+    var checkbox = document.getElementsByClassName("initialcheck");
+    var feedbackCheckbox = document.getElementsByClassName("feedbackcheck");
+    var noList = [1, 4, 7, 10, 13]; 
+    var listHeaders = document.getElementsByClassName("actionHeader"); 
+    var listHeaderDescription = []; 
+    for(var i = 0; i<listHeaders.length; i++)
+    {
+        listHeaderDescription[i]=listHeaders[i].innerHTML; 
+    }
+    for(var i = 0; i<checkbox.length; i++)
+    {
+        if(checkbox[i].checked==true && noList.includes(i)) {
+            document.getElementById("formalizeFormList").innerHTML =  document.getElementById("formalizeFormList").innerHTML+
+            `<form>
+            <label for="fname">What is your key take-home point from the <i>`+listHeaderDescription[noList.indexOf(i)].toLowerCase()+`</i> step. What did you do instead? What is something you want to continue working on or do differently in the future?</label><br>
+            <input type="text" id="fname" name="fname" placeholder="Type answer here..."><br>`
+        }
+    }
 }
