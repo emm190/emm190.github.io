@@ -390,7 +390,8 @@ function showFeedBackForm() {
             document.getElementById("feedbackFormList").innerHTML =  document.getElementById("feedbackFormList").innerHTML+
             `<form>
             <label for="fname">You did not <i>`+listHeaderDescription[noList.indexOf(i)].toLowerCase()+`</i>. What did you do instead? What do you think led to this?</label><br>
-            <input type="text" id="fname" name="fname" placeholder="Type answer here..."><br>`
+            <span class="textarea" role="textbox" contenteditable></span>
+            </form>`
         }
     }
 }
