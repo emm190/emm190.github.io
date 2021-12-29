@@ -139,6 +139,7 @@ function displayFormailze() {
     document.getElementById("benchmarkDescription").style.display = "none";
     document.getElementById("test").style.display = "none";
     document.getElementById("slideshowR").style.display = "none";
+    document.getElementById("slideshowI").style.display = "none";
     document.getElementById("slideshowF").style.display = "block";
     showFormalizeForm(); 
 }

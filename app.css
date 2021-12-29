@@ -377,6 +377,15 @@ label {
   display: inline-block;
 }
 
+.input,
+.textarea {
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 1px 6px;
+  margin-left:20px;
+}
+
 input[type=submit] {
   background-color: #4CAF50;
   color: white;
@@ -389,4 +398,22 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: #45a049;
+}
+
+.textarea {
+  display: block;
+  width: 90%;
+  overflow:scroll;
+  resize: both;
+  min-height: 40px;
+  line-height: 20px;
+  max-width: 693px;
+  max-height: 270px;
+  text-align: left; 
+  font-size: 18px; 
+}
+
+.textarea[contenteditable]:empty::before {
+  content: "Type answer here...";
+  color: gray;
 }
