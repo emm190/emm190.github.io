@@ -7,6 +7,7 @@ let text = '{"table0":[' +
 '{"step":"All correct","feedback":"During the primary survey, you correctly identified that this patient had a life-threatening partial amputation and placed a tourniquet on the proximal right leg to stop the bleeding." }]}';
 //outline: '{"step":"","feedback":""}' + 
 const obj = JSON.parse(text);
+console.log(obj.table0.length);
 console.log(obj.table0[0].step); 
 
 var slideNum = 0; 
@@ -308,7 +309,7 @@ function showFeedbackList(n){
     var indexDesc = 0;
     //if all are checked display correct answer feedback 
     if(n[0].checked && n[3].checked && n[6].checked && n[9].checked && n[12].checked) {
-        document.getElementById("positiveFeedBackList").innerHTML = '<li>During the primary survey, you correctly identified that this patient had a life-threatening partial amputation and placed a tourniquet on the proximal right leg to stop the bleeding.</li>'
+        document.getElementById("positiveFeedBackList").innerHTML = obj.table0[obj.table0.length-1].feedback; 
         document.getElementById("negativeFeedBackList").innerHTML = '<li>You performed everything correctly.</li>'
     }
     else { 
