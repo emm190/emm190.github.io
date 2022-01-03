@@ -328,7 +328,7 @@ function showFeedbackList(n){
                     indexDesc=3;
                 else if (i-3>=9 && i-3<=11)//12,13,14
                     indexDesc=4; 
-                document.getElementById("negativeFeedBackList").innerHTML =  document.getElementById("negativeFeedBackList").innerHTML+'<li><u>'+listHeaderDescription[indexDesc]+'</u>: '+negativeFeedback(indexDesc)+'</li>'
+                document.getElementById("negativeFeedBackList").innerHTML =  document.getElementById("negativeFeedBackList").innerHTML+'<li><u>'+obj.table0[indexDesc].step+'</u>: '+obj.table0[indexDesc].feedback+'</li>'
             }
             if(n[i].checked==true && yesList.includes(i))
             {
