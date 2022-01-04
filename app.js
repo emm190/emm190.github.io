@@ -410,7 +410,7 @@ function showFeedBackForm() {
         if(checkbox[i].checked==true && noList.includes(i)) {
             document.getElementById("feedbackFormList").innerHTML =  document.getElementById("feedbackFormList").innerHTML+
             `<form>
-            <label for="fname">You did not <i>`+listHeaderDescription[noList.indexOf(i)].toLowerCase()+`</i>. What did you do instead? What do you think led to this?</label><br>
+            <label for="fname">You did not <i>`+tables[currTableInd][noList.indexOf(i)].step.toLowerCase()+`</i>. What did you do instead? What do you think led to this?</label><br>
             <span class="textarea" role="textbox" contenteditable></span>
             </form>`
         }
