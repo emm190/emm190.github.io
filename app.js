@@ -1,14 +1,21 @@
-let text = '{"table0":[' + 
+let data = '{"table0":[' + 
 '{"step":"Identify life-threatening bleeding during your primary survey","feedback":"The following should alert you to possible life-threatening blood loss early on in your assessment:<ul><li>Mechanism of injury, a lawn-mower accident, provided by dispatch (scene size up)</li> <li>A bystander holding a blood-soaked towel to the patient’s right leg (primary survey), which was ultimately found to be related to a partial amputation</li></ul>" },' +
 '{"step":"Apply a tourniquet during the primary survey","feedback":"The patient had a partial amputation and was losing a large amount of blood. This is a threat to life and should be acted on during the primary survey. You could instruct a colleague to apply the tourniquet while you continue on with your primary survey." },' +
 '{"step":"Apply a tourniquet as far proximally as possible","feedback":"The correct placement of a tourniquet is as far proximal as possible. If you simply applied direct pressure, this would not have adequately stopped the bleeding so you would need to escalate care."},' + 
 '{"step":"Confirm that bleeding has stopped","feedback":"After placement of a tourniquet, you must confirm that the bleeding as stopped. If bleeding has not stopped, you would want to apply a second tourniquet."},' + 
 '{"step":"Confirm that pulses are absent","feedback":"After placement of a tourniquet, you must confirm that pulses are absent. If pulses are still palpable, you would want to apply a second tourniquet."},' + 
-'{"step":"All correct","feedback":"During the primary survey, you correctly identified that this patient had a life-threatening partial amputation and placed a tourniquet on the proximal right leg to stop the bleeding." }]}';
+'{"step":"All correct","feedback":"During the primary survey, you correctly identified that this patient had a life-threatening partial amputation and placed a tourniquet on the proximal right leg to stop the bleeding." }],' + 
+'"table1":[' + 
+'{"step":"test step","feedback":""}],' + 
+'"table2":[' + 
+'{"step":"test step","feedback":""}],' + 
+'"table3":[' + 
+'{"step":"test step 3","feedback":""}]}';
 //outline: '{"step":"","feedback":""}' + 
-const obj = JSON.parse(text);
+const obj = JSON.parse(data);
 console.log(obj.table0.length);
-console.log(obj.table0[0].step); 
+console.log(obj.table3[0].step); 
+
 
 var slideNum = 0; 
 var checkNum = 0; 
@@ -307,9 +314,10 @@ function showFeedbackList(n){
     }
     console.log(listHeaderDescription);
     var indexDesc = 0;
+    var name = "table0";
     //if all are checked display correct answer feedback 
     if(n[0].checked && n[3].checked && n[6].checked && n[9].checked && n[12].checked) {
-        document.getElementById("positiveFeedBackList").innerHTML = obj.table0[obj.table0.length-1].feedback; 
+        document.getElementById("positiveFeedBackList").innerHTML = obj.name[obj.name.length-1].feedback; 
         document.getElementById("negativeFeedBackList").innerHTML = '<li>You performed everything correctly.</li>'
     }
     else { 
