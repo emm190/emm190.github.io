@@ -26,8 +26,18 @@ let data = '{"table0":[' +
 '{"step":"All correct","feedback":"You quickly recognized that this patient was in hemorrhagic shock. You appropriately started IV fluids to a goal systolic of 90 and optimized oxygenation by keeping the patient supine, warming him, and administering O2."}]}';
 //outline: '{"step":"","feedback":""}' + 
 const obj = JSON.parse(data);
-console.log(obj.table0.length);
-console.log(obj.table3[0].step); 
+//console.log(obj.table0.length);
+//console.log(obj.table3[0].step); 
+//console.log(Object.keys(obj))
+
+//how to loop through 
+/*
+for(var i = 0; i<Object.keys(obj).length; i++){ 
+    console.log(Object.keys(obj)[i]); 
+}
+*/
+var currTableInd = 0; 
+var tables = [obj.table0, obj.table1, obj.table2, obj.table3] 
 
 
 var slideNum = 0; 
@@ -327,10 +337,11 @@ function showFeedbackList(n){
     }
     console.log(listHeaderDescription);
     var indexDesc = 0;
-    var name = "table0";
+    
+    console.log(tables[currTableInd][0].step);
     //if all are checked display correct answer feedback 
     if(n[0].checked && n[3].checked && n[6].checked && n[9].checked && n[12].checked) {
-        document.getElementById("positiveFeedBackList").innerHTML = obj.name[obj.name.length-1].feedback; 
+        document.getElementById("positiveFeedBackList").innerHTML = tables[currTableInd][tables[currTableInd].length-1].feedback; 
         document.getElementById("negativeFeedBackList").innerHTML = '<li>You performed everything correctly.</li>'
     }
     else { 
@@ -349,7 +360,7 @@ function showFeedbackList(n){
                     indexDesc=3;
                 else if (i-3>=9 && i-3<=11)//12,13,14
                     indexDesc=4; 
-                document.getElementById("negativeFeedBackList").innerHTML =  document.getElementById("negativeFeedBackList").innerHTML+'<li><u>'+obj.table0[indexDesc].step+'</u>: '+obj.table0[indexDesc].feedback+'</li>'
+                document.getElementById("negativeFeedBackList").innerHTML =  document.getElementById("negativeFeedBackList").innerHTML+'<li><u>'+tables[currTableInd][indexDesc].step+'</u>: '+tables[currTableInd][indexDesc].feedback+'</li>'
             }
             if(n[i].checked==true && yesList.includes(i))
             {
@@ -363,7 +374,7 @@ function showFeedbackList(n){
                     indexDesc=3;
                 else if (i-3>=9 && i-3<=11)//12,13,14
                     indexDesc=4; 
-                document.getElementById("positiveFeedBackList").innerHTML =  document.getElementById("positiveFeedBackList").innerHTML+'<li><u>'+listHeaderDescription[indexDesc]+'</u></li>'
+                document.getElementById("positiveFeedBackList").innerHTML =  document.getElementById("positiveFeedBackList").innerHTML+'<li><u>'+tables[currTableInd][indexDesc].step+'</u></li>'
             }
             rowCount++; 
             
