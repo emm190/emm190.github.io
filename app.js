@@ -322,6 +322,9 @@ function showNext(n) {
 }
 
 function showFeedback(n, id){
+    if(n!='') { 
+     currTableInd = parseInt(n); 
+    }
     console.log(id)
     var checkbox = document.getElementsByClassName("initialcheck" + n);
     var feedbackCheckbox = document.getElementsByClassName("feedbackcheck" + n);
@@ -332,12 +335,17 @@ function showFeedback(n, id){
         }
         feedbackCheckbox[i].disabled=true;
     }
-    showFeedbackList(feedbackCheckbox, id); 
+    console.log("Length of feedback checkbox " + feedbackCheckbox.length); 
+    showFeedbackList(feedbackCheckbox, n); 
     document.getElementById("lifeThreatBleed").style.display = "none";
     document.getElementById(id).style.display = "block";
 }
 
-function showFeedbackList(n){
+function showFeedbackList(n, ind){
+    if(currTableInd==1 || currTableInd==2 || currTableInd==3) {
+        currTableInd = parseInt(ind); 
+    }
+    console.log("current table index" + currTableInd);
     var yesList = [0, 3, 6, 9, 12]; 
     var noList = [1, 4, 7, 10, 13]; 
     var unsureList = [2, 5, 8, 11, 14];
@@ -354,8 +362,8 @@ function showFeedbackList(n){
     console.log(tables[currTableInd][0].step);
     //if all are checked display correct answer feedback 
     if(n[0].checked && n[3].checked && n[6].checked && n[9].checked && n[12].checked) {
-        document.getElementById("positiveFeedBackList").innerHTML = tables[currTableInd][tables[currTableInd].length-1].feedback; 
-        document.getElementById("negativeFeedBackList").innerHTML = '<li>You performed everything correctly.</li>'
+        document.getElementById("positiveFeedBackList" + String(ind)).innerHTML = tables[currTableInd][tables[currTableInd].length-1].feedback; 
+        document.getElementById("negativeFeedBackList" + String(ind)).innerHTML = '<li>You performed everything correctly.</li>'
     }
     else { 
         for(var i = 0; i<n.length; i++)
@@ -373,7 +381,8 @@ function showFeedbackList(n){
                     indexDesc=3;
                 else if (i-3>=9 && i-3<=11)//12,13,14
                     indexDesc=4; 
-                document.getElementById("negativeFeedBackList").innerHTML =  document.getElementById("negativeFeedBackList").innerHTML+'<li><u>'+tables[currTableInd][indexDesc].step+'</u>: '+tables[currTableInd][indexDesc].feedback+'</li>'
+                console.log(tables[currTableInd][indexDesc].step); 
+                document.getElementById("negativeFeedBackList" + String(ind)).innerHTML =  document.getElementById("negativeFeedBackList").innerHTML+'<li><u>'+tables[currTableInd][indexDesc].step+'</u>: '+tables[currTableInd][indexDesc].feedback+'</li>';
             }
             if(n[i].checked==true && yesList.includes(i))
             {
@@ -387,7 +396,7 @@ function showFeedbackList(n){
                     indexDesc=3;
                 else if (i-3>=9 && i-3<=11)//12,13,14
                     indexDesc=4; 
-                document.getElementById("positiveFeedBackList").innerHTML =  document.getElementById("positiveFeedBackList").innerHTML+'<li><u>'+tables[currTableInd][indexDesc].step+'</u></li>'
+                document.getElementById("positiveFeedBackList" + String(ind)).innerHTML =  document.getElementById("positiveFeedBackList").innerHTML+'<li><u>'+tables[currTableInd][indexDesc].step+'</u></li>'
             }
             rowCount++; 
             
@@ -412,9 +421,12 @@ function showFeedBackForm(n) {
     var className = "initialcheck" + n;
     var checkbox = document.getElementsByClassName(className);
     var noList = [1, 4, 7, 10, 13]; 
+    console.log("Length" + checkbox.length);
     for(var i = 0; i<checkbox.length; i++)
     {
+        console.log(checkbox[i].checked + " : ");
         if(checkbox[i].checked==true && noList.includes(i)) {
+            console.log(i + " is true and is in no list")
             document.getElementById("feedbackFormList").innerHTML =  document.getElementById("feedbackFormList").innerHTML+
             `<form>
             <label for="fname">You did not <i>`+tables[currTableInd][noList.indexOf(i)].step.toLowerCase()+`</i>. What did you do instead? What do you think led to this?</label><br>
