@@ -175,9 +175,85 @@
                     </td>
                 </tr>
               </table> 
-              <a id="nextbuttonbleed" onclick="showFeedback()" href="#" style="text-align:right;display: none;" class="nextRound round">&#8250;</a>
+              <a id="nextbuttonbleed" onclick="showFeedback('', 'showFeedBackForBleed')" href="#" style="text-align:right;display: none;" class="nextRound round">&#8250;</a>
 
         </div>
+
+        <div id="stabilizeCervical" class="mySlides" style="display: hidden;">
+          <p class="author"><b>Did you do the following correct actions?</b></p> 
+            <table style="width:99%;">
+              <tr>
+                <th style="text-align: center;">Action</th>
+                <th style="text-align: center;">Yes</th>
+                <th style="text-align: center;">No</th>
+                <th style="text-align: center;">Unsure</th>
+              </tr>
+              <br>
+              <tr>
+                <td>Identify that this patient is at risk for a cervical spine injury during your scene size-up</td>
+                <td  class="checkbox" style="text-align: center;">
+                  <input onClick="checkMarked()" class="initialcheck1" type="radio" name="cervicalSpineInjury">
+                </td>
+                <td class="checkbox" style="text-align: center;">
+                  <input onClick="checkMarked()" class="initialcheck1" type="radio" name="cervicalSpineInjury">
+                </td>
+                <td class="checkbox" style="text-align: center;">
+                  <input onClick="checkMarked()" class="initialcheck1" type="radio" name="cervicalSpineInjury">
+                </td>
+              </tr>
+              
+              <tr>
+                  <td>Direct a team member to take manual c-spine stabilization during scene size-up</td>
+                  <td class="checkbox" style="text-align: center;">
+                    <input onClick="checkMarked()" class="initialcheck1" type="radio" name="cSpine">
+                  </td>
+                  <td class="checkbox" style="text-align: center;">
+                    <input onClick="checkMarked()" class="initialcheck1" type="radio" name="cSpine">
+                  </td>
+                  <td class="checkbox" style="text-align: center;">
+                    <input onClick="checkMarked()" class="initialcheck1" type="radio" name="cSpine">
+                  </td>
+              </tr>
+              <tr>
+                <td>Applies an appropriately sized cervical collar after assessing the neck during the secondary assessment</td>
+                <td class="checkbox" style="text-align: center;">
+                  <input onClick="checkMarked()" class="initialcheck1" type="radio" name="cervCollar">
+                </td>
+                <td class="checkbox" style="text-align: center;">
+                  <input onClick="checkMarked()" class="initialcheck1" type="radio" name="cervCollar">
+                </td>
+                <td class="checkbox" style="text-align: center;">
+                  <input onClick="checkMarked()" class="initialcheck1" type="radio" name="cervCollar">
+                </td>
+            </tr>
+              <tr>
+                  <td>Log-rolls the patient onto a backboard, while continuing to stabilize the spine</td>
+                  <td class="checkbox" style="text-align: center;">
+                    <input onClick="checkMarked()" class="initialcheck1" type="radio" name="logRoll">
+                  </td>
+                  <td class="checkbox" style="text-align: center;">
+                    <input onClick="checkMarked()" class="initialcheck1" type="radio" name="logRoll">
+                  </td>
+                  <td class="checkbox" style="text-align: center;">
+                    <input onClick="checkMarked()" class="initialcheck1" type="radio" name="logRoll">
+                  </td>
+              </tr>
+              <tr>
+                  <td>Fully immobilizes the patient with at least three straps, the CID pad, both heads blocks, and with CID straps</td>
+                  <td class="checkbox" style="text-align: center;">
+                    <input onClick="checkMarked()" class="initialcheck1" type="radio" name="immobilize">
+                  </td>
+                  <td class="checkbox" style="text-align: center;">
+                    <input onClick="checkMarked()" class="initialcheck1" type="radio" name="immobilize">
+                  </td>
+                  <td class="checkbox" style="text-align: center;">
+                    <input onClick="checkMarked()" class="initialcheck1" type="radio" name="immobilize">
+                  </td>
+              </tr>
+            </table> 
+            <a id="nextbuttonbleed" onclick="showFeedback('1', 'showFeedBackStabilizeCervical')" href="#" style="text-align:right;display: block;" class="nextRound round">&#8250;</a>
+
+      </div>
         
 
         <div id="showFeedBackForBleed" class="mySlides">
@@ -260,9 +336,93 @@
               <ul id="negativeFeedBackList" style="color:red">
               </ul>
             </div>
-            <a id="nextbuttonfb" onclick="showFeedBackForm()" href="#" style="text-align:right;" class="nextRound round">&#8250;</a>
+            <a id="nextbuttonfb" onclick="showFeedBackForm('')" href="#" style="text-align:right;" class="nextRound round">&#8250;</a>
 
       </div>
+
+      <div id="showFeedBackStabilizeCervical" class="mySlides">
+        <p class="author"><b>Below the table is feedback about your responses:</b></p> 
+          <table style="width:99%;">
+            <tr>
+              <th>Action</th>
+              <th >Yes</th>
+              <th >No</th>
+              <th >Unsure</th>
+            </tr>
+            <br>
+            <tr>
+              <td class="actionHeader">Identify that this patient is at risk for a cervical spine injury during your scene size-up</td>
+              <td style="margin: 5px;" class="checkbox">
+                <input class="feedbackcheck1" type="checkbox">
+              </td>
+              <td style="margin: 5px;" class="checkbox">
+                <input class="feedbackcheck1" type="checkbox">
+              </td>
+              <td style="margin: 5px;" class="checkbox">
+                <input class="feedbackcheck1" type="checkbox">
+              </td>
+            </tr>
+            <tr>
+                <td class="actionHeader">Direct a team member to take manual c-spine stabilization during scene size-up</td>
+                <td class="checkbox">
+                  <input class="feedbackcheck1" type="checkbox">
+                </td>
+                <td class="checkbox">
+                  <input class="feedbackcheck1" type="checkbox">
+                </td>
+                <td class="checkbox">
+                  <input class="feedbackcheck1" type="checkbox">
+                </td>
+            </tr>
+            <tr>
+              <td class="actionHeader">Applies an appropriately sized cervical collar after assessing the neck during the secondary assessment</td>
+              <td class="checkbox">
+                <input class="feedbackcheck1" type="checkbox">
+              </td>
+              <td class="checkbox">
+                <input class="feedbackcheck1" type="checkbox">
+              </td>
+              <td class="checkbox">
+                <input class="feedbackcheck1" type="checkbox">
+              </td>
+          </tr>
+            <tr>
+                <td class="actionHeader">Log-rolls the patient onto a backboard, while continuing to stabilize the spine</td>
+                <td class="checkbox">
+                  <input class="feedbackcheck1" type="checkbox">
+                </td>
+                <td class="checkbox">
+                  <input class="feedbackcheck1" type="checkbox">
+                </td>
+                <td class="checkbox">
+                  <input class="feedbackcheck1" type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td class="actionHeader">Fully immobilizes the patient with at least three straps, the CID pad, both heads blocks, and with CID straps</td>
+                <td class="checkbox">
+                  <input class="feedbackcheck1" type="checkbox">
+                </td>
+                <td class="checkbox">
+                  <input class="feedbackcheck1" type="checkbox">
+                </td>
+                <td class="checkbox">
+                  <input class="feedbackcheck1" id="lastCheck" onClick="checkMarked()" type="checkbox">
+                </td>
+            </tr>
+          </table> 
+          <div id="feedbackList">
+            <p style="color:red">Feedback:</p>
+            <p style="color:red">You did an excellent job with: </p>
+            <ul id="positiveFeedBackList" style="color:red">
+            </ul>
+            <p style="color:red">Incorrect or not performed actions: </p>
+            <ul id="negativeFeedBackList" style="color:red">
+            </ul>
+          </div>
+          <a id="nextbuttonfb" onclick="showFeedBackForm('1')" href="#" style="text-align:right;" class="nextRound round">&#8250;</a>
+
+    </div>
         
       </div>
 
@@ -278,7 +438,7 @@
         <p class="author">Reflect on incorrect actions:</p>
         <ul id="feedbackFormList" style="color:black">
         </ul>
-        <a id="nextbuttonfbf"  href="#" style="text-align:right;" class="nextRound round">&#8250;</a>
+        <a id="nextbuttonfbf" onClick=showNext(stabilizeCervical) href="#" style="text-align:right;" class="nextRound round">&#8250;</a>
 
       </div>
     </div>

@@ -308,10 +308,23 @@ function myFunction(n) {
     popup.classList.toggle("show");
   }
 
-function showFeedback(){
-    var checkbox = document.getElementsByClassName("initialcheck");
-    var feedbackCheckbox = document.getElementsByClassName("feedbackcheck");
-    var checkArray = []; 
+function showNext(n) { 
+    for(var i = 0; i<document.getElementsByClassName("mySlides").length; i++)
+    {
+        document.getElementsByClassName("mySlides")[i].style.display = "none";
+    }
+    for(var i = 0; i<document.getElementsByClassName("slideshow-container").length; i++)
+    {
+        document.getElementsByClassName("slideshow-container")[i].style.display = "none";
+    }
+    document.getElementById("slideshowI").style.display = "block";
+    document.getElementById(n.id).style.display = "block";
+}
+
+function showFeedback(n, id){
+    console.log(id)
+    var checkbox = document.getElementsByClassName("initialcheck" + n);
+    var feedbackCheckbox = document.getElementsByClassName("feedbackcheck" + n);
     for(var i = 0; i<checkbox.length; i++)
     {
         if(checkbox[i].checked==true) {
@@ -319,9 +332,9 @@ function showFeedback(){
         }
         feedbackCheckbox[i].disabled=true;
     }
-    showFeedbackList(feedbackCheckbox); 
+    showFeedbackList(feedbackCheckbox, id); 
     document.getElementById("lifeThreatBleed").style.display = "none";
-    document.getElementById("showFeedBackForBleed").style.display = "block";
+    document.getElementById(id).style.display = "block";
 }
 
 function showFeedbackList(n){
@@ -393,10 +406,11 @@ function checkMarked(){
 }
 
 
-function showFeedBackForm() {
+function showFeedBackForm(n) {
     document.getElementById("feedbackForm").style.display = "block";
     document.getElementById("slideshowI").style.display = "none";
-    var checkbox = document.getElementsByClassName("initialcheck");
+    var className = "initialcheck" + n;
+    var checkbox = document.getElementsByClassName(className);
     var noList = [1, 4, 7, 10, 13]; 
     for(var i = 0; i<checkbox.length; i++)
     {
