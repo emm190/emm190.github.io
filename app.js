@@ -339,6 +339,7 @@ function showFeedback(n, id){
     console.log("Length of feedback checkbox " + feedbackCheckbox.length); 
     showFeedbackList(feedbackCheckbox, n); 
     document.getElementById("lifeThreatBleed").style.display = "none";
+    document.getElementById("stabilizeCervical").style.display = "none";
     document.getElementById(id).style.display = "block";
 }
 
