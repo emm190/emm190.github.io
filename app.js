@@ -8,6 +8,7 @@ let data = '{"table0":[' +
 '"table1":[' + 
 '{"step":"Identify that this patient is at risk for a cervical spine injury during your scene size-up","feedback":"This is a trauma case, so you must presume cervical spine injury until proven otherwise."},' + 
 '{"step":"Direct a team member to take manual c-spine stabilization during scene size-up","feedback":"If this patient has a cervical spine injury, any movement during your primary assessment can cause harm to the patient. Because this is a trauma patient, you should stabilize the C-spine before starting your ABCs."},' + 
+'{"step":"","feedback":""},' + 
 '{"step":"Log-rolls the patient onto a backboard, while continuing to stabilize the spine","feedback":"With any movement of the patient, be sure that someone is continuing to control the cervical spine, even if the patient is already in a collar. This includes during inspection of the patient’s back as well as when trying to move the patient for transport."},' + 
 '{"step":"Fully immobilizes the patient with at least three straps, the CID pad, both heads blocks, and with CID straps","feedback":"Be sure that the patient is adequately secured before attempting to move the patient on a backboard."},' + 
 '{"step":"All correct","feedback":"During the scene survey, you recognized that this trauma patient’s cervical spine needed to be immobilized immediately. You continued to maintain cervical stabilization through the rest of your assessment and whenever you moved the patient."}],' + 
@@ -24,7 +25,7 @@ let data = '{"table0":[' +
 '{"step":"Place two large-bore IVs and bolus NS fluids as quickly as possible to a goal BP systolic 90","feedback":"The patient is in hemorrhagic shock. While your ultimate goal is to get the patient to definitive management of his bleeding (ie. the OR), supportive the patient’s blood pressure with IV fluids is critical. Administer boluses to a systolic BP of 90. Further fluid resuscitation beyond this can lead to fluid overload without significant benefit to the patient."},' + 
 '{"step":"Keep the patient warm and in a supine position and administer O2","feedback":"The patient is in hemorrhagic shock. While addressing the source of bleeding and starting IV fluids are critical, you should also keep the patient warm, place him in a supine position, and administer O2. These maneuvers are to help optimize oxygenation."},' + 
 '{"step":"All correct","feedback":"You quickly recognized that this patient was in hemorrhagic shock. You appropriately started IV fluids to a goal systolic of 90 and optimized oxygenation by keeping the patient supine, warming him, and administering O2."}]}';
-//outline: '{"step":"","feedback":""}' + 
+//outline: '{"step":"","feedback":""},' + 
 const obj = JSON.parse(data);
 //console.log(obj.table0.length);
 //console.log(obj.table3[0].step); 
@@ -342,6 +343,9 @@ function showFeedback(n, id){
 }
 
 function showFeedbackList(n, ind){
+    console.log("In this function");
+    document.getElementById("negativeFeedBackList").innerHTML = ""; 
+    document.getElementById("positiveFeedBackList").innerHTML = ""; 
     if(currTableInd==1 || currTableInd==2 || currTableInd==3) {
         currTableInd = parseInt(ind); 
     }
@@ -350,7 +354,7 @@ function showFeedbackList(n, ind){
     var noList = [1, 4, 7, 10, 13]; 
     var unsureList = [2, 5, 8, 11, 14];
     var rowCount = 0;
-    var listHeaders = document.getElementsByClassName("actionHeader"); 
+    var listHeaders = document.getElementsByClassName("actionHeader" + currTableInd); 
     var listHeaderDescription = []; 
     for(var i = 0; i<listHeaders.length; i++)
     {
@@ -381,8 +385,9 @@ function showFeedbackList(n, ind){
                     indexDesc=3;
                 else if (i-3>=9 && i-3<=11)//12,13,14
                     indexDesc=4; 
-                console.log(tables[currTableInd][indexDesc].step); 
-                document.getElementById("negativeFeedBackList" + String(ind)).innerHTML =  document.getElementById("negativeFeedBackList").innerHTML+'<li><u>'+tables[currTableInd][indexDesc].step+'</u>: '+tables[currTableInd][indexDesc].feedback+'</li>';
+                console.log("adding: " + tables[currTableInd][indexDesc].step + ", index: " + indexDesc); 
+                console.log(document.getElementById("negativeFeedBackList" + String(ind))); 
+                document.getElementById("negativeFeedBackList" + String(ind)).innerHTML =  document.getElementById("negativeFeedBackList" + String(ind)).innerHTML+'<li><u>'+tables[currTableInd][indexDesc].step+'</u>: '+tables[currTableInd][indexDesc].feedback+'</li>';
             }
             if(n[i].checked==true && yesList.includes(i))
             {
@@ -396,7 +401,8 @@ function showFeedbackList(n, ind){
                     indexDesc=3;
                 else if (i-3>=9 && i-3<=11)//12,13,14
                     indexDesc=4; 
-                document.getElementById("positiveFeedBackList" + String(ind)).innerHTML =  document.getElementById("positiveFeedBackList").innerHTML+'<li><u>'+tables[currTableInd][indexDesc].step+'</u></li>'
+                console.log("adding: " + tables[currTableInd][indexDesc].step + ", index: " + indexDesc); 
+                document.getElementById("positiveFeedBackList" + String(ind)).innerHTML =  document.getElementById("positiveFeedBackList" + String(ind)).innerHTML+'<li><u>'+tables[currTableInd][indexDesc].step+'</u></li>'
             }
             rowCount++; 
             
