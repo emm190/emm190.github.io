@@ -8,7 +8,7 @@ let data = '{"table0":[' +
 '"table1":[' + 
 '{"step":"Identify that this patient is at risk for a cervical spine injury during your scene size-up","feedback":"This is a trauma case, so you must presume cervical spine injury until proven otherwise."},' + 
 '{"step":"Direct a team member to take manual c-spine stabilization during scene size-up","feedback":"If this patient has a cervical spine injury, any movement during your primary assessment can cause harm to the patient. Because this is a trauma patient, you should stabilize the C-spine before starting your ABCs."},' + 
-'{"step":"","feedback":""},' + 
+'{"step":"Applies an appropriately sized cervical collar after assessing the neck during the secondary assessment","feedback":"This action was performed incorrectly."},' + 
 '{"step":"Log-rolls the patient onto a backboard, while continuing to stabilize the spine","feedback":"With any movement of the patient, be sure that someone is continuing to control the cervical spine, even if the patient is already in a collar. This includes during inspection of the patient’s back as well as when trying to move the patient for transport."},' + 
 '{"step":"Fully immobilizes the patient with at least three straps, the CID pad, both heads blocks, and with CID straps","feedback":"Be sure that the patient is adequately secured before attempting to move the patient on a backboard."},' + 
 '{"step":"All correct","feedback":"During the scene survey, you recognized that this trauma patient’s cervical spine needed to be immobilized immediately. You continued to maintain cervical stabilization through the rest of your assessment and whenever you moved the patient."}],' + 
@@ -183,6 +183,10 @@ function displayFormailze() {
     document.getElementById("test").style.display = "none";
     document.getElementById("slideshowR").style.display = "none";
     document.getElementById("slideshowI").style.display = "none";
+    document.getElementById("feedbackFormList1").style.display = "none";
+    document.getElementById("feedbackFormList").style.display = "none";
+    document.getElementById("feedbackForm").style.display = "none";
+    document.getElementById("feedbackForm1").style.display = "none";
     document.getElementById("slideshowF").style.display = "block";
     showFormalizeForm(); 
 }
@@ -423,7 +427,11 @@ function checkMarked(){
 
 
 function showFeedBackForm(n) {
-    document.getElementById("feedbackForm").style.display = "block";
+    console.log("feedbackForm" + String(n)); 
+    document.getElementById("feedbackForm" + String(n)).style.display = "block";
+    if(n!="") { 
+        document.getElementById("feedbackForm").style.display = "none";
+    }
     document.getElementById("slideshowI").style.display = "none";
     var className = "initialcheck" + n;
     var checkbox = document.getElementsByClassName(className);
@@ -434,7 +442,7 @@ function showFeedBackForm(n) {
         console.log(checkbox[i].checked + " : ");
         if(checkbox[i].checked==true && noList.includes(i)) {
             console.log(i + " is true and is in no list")
-            document.getElementById("feedbackFormList").innerHTML =  document.getElementById("feedbackFormList").innerHTML+
+            document.getElementById("feedbackFormList" + String(n)).innerHTML =  document.getElementById("feedbackFormList" + String(n)).innerHTML+
             `<form>
             <label for="fname">You did not <i>`+tables[currTableInd][noList.indexOf(i)].step.toLowerCase()+`</i>. What did you do instead? What do you think led to this?</label><br>
             <span class="textarea" role="textbox" contenteditable></span>
